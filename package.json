@@ -22,7 +22,11 @@
   "files": [
     "lib"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@bugsnag/js": "^6.4.0",
+    "@bugsnag/plugin-express": "^6.4.0",
+    "@bugsnag/plugin-vue": "^6.4.0"
+  },
   "devDependencies": {
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
