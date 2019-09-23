@@ -38,7 +38,7 @@ Bugsnag recommends creating two projects in your dashboard, one for the server e
 }
 ```
 
-If you don't want to use two API keys just use apiKey property
+If you don't want to use two API keys just use the apiKey property
 
 ```js
 {
