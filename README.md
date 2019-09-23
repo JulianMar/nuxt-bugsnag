@@ -17,7 +17,7 @@ This is a module from the [bugsnag demo project](https://github.com/bugsnag/bugs
 1. Add `nuxt-bugsnag` dependency to your project
 
 ```bash
-yarn add nuxt-bugsnag # or npm install nuxt-bugsnag
+npm install nuxt-bugsnag
 ```
 
 2. Add `nuxt-bugsnag` to the `modules` section of `nuxt.config.js`
