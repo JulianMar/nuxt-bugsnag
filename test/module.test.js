@@ -27,6 +27,6 @@ describe('basic', () => {
 
   test('render', async () => {
     const html = await get('/')
-    expect(html).toContain('Works!')
+    expect(html).toContain('bugsnag')
   })
 })

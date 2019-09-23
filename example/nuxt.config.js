@@ -9,5 +9,10 @@ module.exports = {
   },
   modules: [
     { handler: require('../') }
-  ]
+  ],
+
+  bugsnag: {
+    browserApiKey: 'YOUR_BROWSER_API_KEY',
+    serverApiKey: 'YOUR_SERVER_API_KEY'
+  }
 }
