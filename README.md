@@ -50,7 +50,7 @@ If you don't want to use two API keys just use the apiKey property
 }
 ```
 
-You can pass every bugsnag (options)[https://docs.bugsnag.com/platforms/javascript/configuration-options/] in the options object
+You can pass every bugsnag [options](https://docs.bugsnag.com/platforms/javascript/configuration-options/) in the options object
 
 
 ```js
