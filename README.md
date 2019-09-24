@@ -50,6 +50,50 @@ If you don't want to use two API keys just use the apiKey property
 }
 ```
 
+You can pass every bugsnag (options)[https://docs.bugsnag.com/platforms/javascript/configuration-options/] in the options object
+
+
+```js
+{
+  modules: [
+    // Simple usage
+    'nuxt-bugsnag',
+
+    // With options
+    ['nuxt-bugsnag', {
+      browserApiKey: 'YOUR_BROWSER_API_KEY',
+      serverApiKey: 'YOUR_SERVER_API_KEY',
+      options: {
+        notifyReleaseStages: ['staging', 'production'],
+      }
+    }]
+  ]
+}
+```
+
+if you want to split them for the server and client again, you can do this aswell.
+
+```js
+{
+  modules: [
+    // Simple usage
+    'nuxt-bugsnag',
+
+    // With options
+    ['nuxt-bugsnag', {
+      apiKey: 'YOUR_API_KEY',
+      browserOptions: {
+        appType: 'browser',
+      },
+      serverOptions: {
+        appType: 'server'
+      }
+    }]
+  ]
+}
+```
+
+
 ## Development
 
 1. Clone this repository
