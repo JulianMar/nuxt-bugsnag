@@ -23,28 +23,28 @@
     "lib"
   ],
   "dependencies": {
-    "@bugsnag/js": "^6.4.1",
+    "@bugsnag/js": "^6.4.3",
     "@bugsnag/plugin-express": "^6.4.1",
     "@bugsnag/plugin-vue": "^6.4.1",
-    "deepmerge": "^4.0.0",
+    "deepmerge": "^4.2.2",
     "webpack-bugsnag-plugins": "^1.4.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
-    "@nuxtjs/eslint-config": "latest",
+    "@nuxtjs/eslint-config": "^2.0.0",
     "babel-eslint": "latest",
     "babel-jest": "latest",
     "codecov": "latest",
-    "eslint": "latest",
+    "eslint": "^6.7.1",
     "get-port": "latest",
-    "husky": "latest",
+    "husky": "^3.1.0",
     "jest": "latest",
-    "nuxt-edge": "^2.10.0-26156170.85035a6e",
+    "nuxt-edge": "^2.10.0-26245456.e9c4bcfe",
     "request": "latest",
-    "request-promise-native": "latest",
-    "standard-version": "latest"
+    "request-promise-native": "^1.0.8",
+    "standard-version": "^7.0.1"
   }
 }
