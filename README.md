@@ -31,12 +31,9 @@ Bugsnag recommends creating two projects in your dashboard, one for the server e
 
     // With options
     ['nuxt-bugsnag', {
-      clientConfig: {
+      config: {
         apiKey: 'YOUR_BROWSER_API_KEY'
       },
-      serverConfig: {
-        apiKey: 'YOUR_SERVER_API_KEY'
-      }
     }]
   ]
 }
@@ -65,36 +62,8 @@ You can pass every bugsnag [options](https://docs.bugsnag.com/platforms/javascri
 
     // With options
     ['nuxt-bugsnag', {
-      clientConfig: {
-        apiKey: 'YOUR_BROWSER_API_KEY'
-      },
-      serverConfig: {
-        apiKey: 'YOUR_SERVER_API_KEY'
-      }
       config: {
         notifyReleaseStages: ['staging', 'production'],
-      }
-    }]
-  ]
-}
-```
-
-if you want to split them for the server and client again, you can do this aswell.
-
-```js
-{
-  modules: [
-    // Simple usage
-    'nuxt-bugsnag',
-
-    // With options
-    ['nuxt-bugsnag', {
-      apiKey: 'YOUR_API_KEY',
-      clientConfig: {
-        appType: 'browser',
-      },
-      serverConfig: {
-        appType: 'server'
       }
     }]
   ]
