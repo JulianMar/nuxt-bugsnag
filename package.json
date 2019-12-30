@@ -1,6 +1,6 @@
 {
   "name": "nuxt-bugsnag",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "",
   "license": "MIT",
   "contributors": [
@@ -42,7 +42,7 @@
     "get-port": "^5.1.0",
     "husky": "^3.1.0",
     "jest": "latest",
-    "nuxt-edge": "latest",
+    "nuxt-edge": "^2.11.1-26294410.0cb2df73",
     "request": "latest",
     "request-promise-native": "^1.0.8",
     "standard-version": "^7.0.1"
