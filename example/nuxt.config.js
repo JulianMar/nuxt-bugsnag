@@ -13,13 +13,8 @@ module.exports = {
 
   bugsnag: {
     config: {
-      notifyReleaseStages: ['staging', 'production']
-    },
-    clientConfig: {
+      notifyReleaseStages: ['staging', 'production'],
       apiKey: 'YOUR_BROWSER_API_KEY'
-    },
-    serverConfig: {
-      apiKey: 'YOUR_SERVER_API_KEY'
     }
   }
 }
