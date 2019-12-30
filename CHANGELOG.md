@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.4](https://github.com/julianmar/nuxt-bugsnag/compare/v3.0.3...v3.0.4) (2019-12-30)
+
+
+### Bug Fixes
+
+* change path ([2eca5d2](https://github.com/julianmar/nuxt-bugsnag/commit/2eca5d24e2d47b70136cf94ab1b8905d85c23e8d))
+* config ([f198c68](https://github.com/julianmar/nuxt-bugsnag/commit/f198c68218716a7022fe983603c554dc1f16a264))
+
 ### [3.0.3](https://github.com/julianmar/nuxt-bugsnag/compare/v3.0.2...v3.0.3) (2019-12-30)
 
 
