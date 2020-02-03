@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.5](https://github.com/julianmar/nuxt-bugsnag/compare/v3.0.4...v3.0.5) (2020-02-03)
+
+
+### Bug Fixes
+
+* allow upload of releases only on production ([be71114](https://github.com/julianmar/nuxt-bugsnag/commit/be71114581f44da37c4e1c1a199f0813b9d30d63))
+
 ### [3.0.4](https://github.com/julianmar/nuxt-bugsnag/compare/v3.0.3...v3.0.4) (2019-12-30)
 
 
