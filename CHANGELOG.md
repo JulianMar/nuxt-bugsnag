@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.1](https://github.com/julianmar/nuxt-bugsnag/compare/v3.0.5...v3.1.1) (2020-04-02)
+
+
+### Bug Fixes
+
+* add publicPath to BugsnagSourceMapUploaderPlugin in order to have right source map file urls ([740b798](https://github.com/julianmar/nuxt-bugsnag/commit/740b7988c0a3010761f04386aac94727b9ce2358))
+
 ### [3.0.5](https://github.com/julianmar/nuxt-bugsnag/compare/v3.0.4...v3.0.5) (2020-02-03)
 
 
