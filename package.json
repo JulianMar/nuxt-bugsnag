@@ -17,34 +17,35 @@
     "dev": "nuxt example",
     "lint": "eslint --ext .js,.vue example lib test",
     "test": "npm run lint && jest",
-    "release": "npm run test && standard-version && git push --follow-tags && npm publish"
+    "release": "npm run test && standard-version && git push --follow-tags && npm publish",
+    "codecov": "npm run "
   },
   "files": [
     "lib"
   ],
   "dependencies": {
-    "@bugsnag/js": "^6.4.3",
-    "@bugsnag/plugin-express": "^6.5.0",
+    "@bugsnag/js": "^6.5.2",
+    "@bugsnag/plugin-express": "^6.5.1",
     "@bugsnag/plugin-vue": "^6.5.0",
     "deepmerge": "^4.2.2",
-    "webpack-bugsnag-plugins": "^1.4.2"
+    "webpack-bugsnag-plugins": "^1.4.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
-    "@commitlint/cli": "latest",
-    "@commitlint/config-conventional": "latest",
-    "@nuxtjs/eslint-config": "^2.0.0",
-    "babel-eslint": "latest",
-    "babel-jest": "latest",
-    "codecov": "latest",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "^8.3.0",
+    "@nuxtjs/eslint-config": "^2.0.2",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^25.2.0",
+    "codecov": "^3.6.0",
     "eslint": "^6.8.0",
-    "get-port": "^5.1.0",
-    "husky": "^3.1.0",
-    "jest": "latest",
-    "nuxt-edge": "^2.11.1-26294410.0cb2df73",
-    "request": "latest",
+    "get-port": "^5.1.1",
+    "husky": "^4.2.0",
+    "jest": "^25.2.4",
+    "nuxt-edge": "^2.13.0-26429775.1a5515f7",
+    "request": "^2.88.2",
     "request-promise-native": "^1.0.8",
-    "standard-version": "^7.0.1"
+    "standard-version": "^7.1.0"
   }
 }
