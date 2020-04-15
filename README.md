@@ -10,8 +10,6 @@
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
-This is a module from the [bugsnag demo project](https://github.com/bugsnag/bugsnag-js/tree/master/examples/nuxtjs)
-
 ## Setup
 
 1. Add `nuxt-bugsnag` dependency to your project
@@ -63,7 +61,7 @@ You can pass every bugsnag [options](https://docs.bugsnag.com/platforms/javascri
     // With options
     ['nuxt-bugsnag', {
       config: {
-        notifyReleaseStages: ['staging', 'production'],
+        enabledReleaseStages: ['staging', 'production'],
       }
     }]
   ]
