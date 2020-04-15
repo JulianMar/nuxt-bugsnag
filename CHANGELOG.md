@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [4.0.1](https://github.com/julianmar/nuxt-bugsnag/compare/v3.1.1...v4.0.1) (2020-04-15)
 
+Alot of breaking changes to options take a look.
+https://github.com/bugsnag/bugsnag-js/blob/next/UPGRADING.md
+
 ### [3.1.1](https://github.com/julianmar/nuxt-bugsnag/compare/v3.0.5...v3.1.1) (2020-04-02)
 
 
