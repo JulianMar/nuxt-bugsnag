@@ -18,8 +18,7 @@
 npm install nuxt-bugsnag
 ```
 
-2. Add `nuxt-bugsnag` to the `modules` section of `nuxt.config.js`
-Bugsnag recommends creating two projects in your dashboard, one for the server errors and one for the browser errors.
+2. Add `nuxt-bugsnag` to the `modules` section of `nuxt.config.js`.
 
 ```js
 {
@@ -37,7 +36,7 @@ Bugsnag recommends creating two projects in your dashboard, one for the server e
 }
 ```
 
-If you don't want to use two API keys just use the apiKey property
+Here is a shorthand for only using the apiKey, and no other options
 
 ```js
 {
