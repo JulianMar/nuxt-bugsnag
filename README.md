@@ -20,23 +20,6 @@ npm install nuxt-bugsnag
 
 2. Add `nuxt-bugsnag` to the `modules` section of `nuxt.config.js`.
 
-```js
-{
-  modules: [
-    // Simple usage
-    'nuxt-bugsnag',
-
-    // With options
-    ['nuxt-bugsnag', {
-      config: {
-        apiKey: 'YOUR_BROWSER_API_KEY'
-      },
-    }]
-  ]
-}
-```
-
-Here is a shorthand for only using the apiKey, and no other options
 
 ```js
 {
@@ -48,7 +31,22 @@ Here is a shorthand for only using the apiKey, and no other options
 }
 ```
 
-You can pass every bugsnag [options](https://docs.bugsnag.com/platforms/javascript/configuration-options/) in the options object
+If you need more flexibility and want to have more options you can try this approach
+
+```js
+{
+  modules: [
+    // With options
+    ['nuxt-bugsnag', {
+      config: {
+        apiKey: 'YOUR_BROWSER_API_KEY'
+      },
+    }]
+  ]
+}
+```
+
+You can pass every bugsnag [options](https://docs.bugsnag.com/platforms/javascript/configuration-options/) in the config object
 
 
 ```js
