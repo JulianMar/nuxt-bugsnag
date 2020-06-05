@@ -36,7 +36,6 @@ If you need more flexibility and want to have more options you can try this appr
 ```js
 {
   modules: [
-    // With options
     ['nuxt-bugsnag', {
       config: {
         apiKey: 'YOUR_BROWSER_API_KEY'
@@ -52,10 +51,6 @@ You can pass every bugsnag [options](https://docs.bugsnag.com/platforms/javascri
 ```js
 {
   modules: [
-    // Simple usage
-    'nuxt-bugsnag',
-
-    // With options
     ['nuxt-bugsnag', {
       config: {
         enabledReleaseStages: ['staging', 'production'],
@@ -73,10 +68,6 @@ You can upload sourcemaps by adding the option `publishRelease`.
 ```js
 {
   modules: [
-    // Simple usage
-    'nuxt-bugsnag',
-
-    // With options
     ['nuxt-bugsnag', {
       apiKey: 'YOUR_API_KEY',
       publishRelease: true,
@@ -84,6 +75,62 @@ You can upload sourcemaps by adding the option `publishRelease`.
   ]
 }
 ```
+
+# BugsnagBuildReporterPlugin
+
+You can upload your source control infos to bugsnag this enpowers you to have `releases`.
+These are all the options from the plugin:
+  - `appVersion: string` the version of the application you are building
+  - `releaseStage: string` `'production'`, `'staging'` etc. (leave blank if this build can be released to different `releaseStage`s)
+  - `sourceControl: object` an object describing the source control of the build (if not specified, the module will attempt to detect source control information from `.git`, `.hg` and the nearest `package.json`)
+    - `provider: string` can be one of: `'github'`, `'github-enterprise'`, `'gitlab'`, `'gitlab-onpremise'`, `'bitbucket'`, `'bitbucket-server'`
+    - `repository: string` a URL (`git`/`ssh`/`https`) pointing to the repository, or webpage representing the repository
+    - `revision: string` the unique identifier for the commit (e.g. git SHA)
+  - `builderName: string` the name of the person/machine that created this build (defaults to the result of the `whoami` command)
+  - `autoAssignRelease: boolean` automatically associate this build with any new error events and sessions that are received for the `releaseStage` until a subsequent build notification is received. If this is set to `true` and no `releaseStage` is provided the build will be applied to `'production'`.
+
+You can set these options by setting the `reporterOptions` like this:
+
+```js
+{
+  modules: [
+    // Simple usage
+    'nuxt-bugsnag',
+
+    // With options
+    ['nuxt-bugsnag', {
+      apiKey: 'YOUR_API_KEY',
+      reporterOptions: {
+        appVersion: 'v1.0.0',
+        autoAssignRelease: true
+      },
+      publishRelease: true,
+    }]
+  ]
+}
+```
+
+I would recommend to set these options
+```js
+{
+  modules: [
+    // Simple usage
+    'nuxt-bugsnag',
+
+    // With options
+    ['nuxt-bugsnag', {
+      apiKey: 'YOUR_API_KEY',
+      reporterOptions: {
+        releaseStage: process.env.NODE_ENV
+        autoAssignRelease: true
+      },
+      publishRelease: true,
+    }]
+  ]
+}
+```
+
+For more info check out this repo https://github.com/bugsnag/webpack-bugsnag-plugins
 
 ## Development
 
