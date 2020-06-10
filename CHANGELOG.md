@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0](https://github.com/julianmar/nuxt-bugsnag/compare/v4.0.1...v4.1.0) (2020-06-10)
+
+
+### Features
+
+* add bugsnag reporter options ([9cf331b](https://github.com/julianmar/nuxt-bugsnag/commit/9cf331b135b8225373befca976d3422bc22b9500))
+
+
+### Bug Fixes
+
+* plugin should be plugins for bugsnag to work ([fa906d8](https://github.com/julianmar/nuxt-bugsnag/commit/fa906d8a2aac9edee2584ba89bf7a6dfe15a07a7))
+* replace nuxt edge with nuxt ([594d82a](https://github.com/julianmar/nuxt-bugsnag/commit/594d82a8e19331284dc3aab29f4fe7cf621fdbaf))
+
 ### [4.0.1](https://github.com/julianmar/nuxt-bugsnag/compare/v3.1.1...v4.0.1) (2020-04-15)
 
 Alot of breaking changes to options take a look.
