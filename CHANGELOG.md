@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.1.1](https://github.com/julianmar/nuxt-bugsnag/compare/v4.1.0...v4.1.1) (2020-06-27)
+
+
+### Bug Fixes
+
+* move init to function ([c176d9d](https://github.com/julianmar/nuxt-bugsnag/commit/c176d9d0e5034ab0ff3bc5ec7e2c119d6d74c726))
+
 ## [4.1.0](https://github.com/julianmar/nuxt-bugsnag/compare/v4.0.1...v4.1.0) (2020-06-10)
 
 
