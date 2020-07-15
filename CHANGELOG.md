@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.1.1](https://github.com/julianmar/nuxt-bugsnag/compare/v4.1.0...v4.1.1) (2020-07-15)
+
+
+### Bug Fixes
+
+* move init to function ([03dd7ff](https://github.com/julianmar/nuxt-bugsnag/commit/03dd7ff0cfb27f0846025bcb789d330072391c46))
+* tell nuxt to use core-js 3 ([d429016](https://github.com/julianmar/nuxt-bugsnag/commit/d4290167764fb63af0d990e437f00014f1283ab0))
+* warning of multiple start calls ([f9550c2](https://github.com/julianmar/nuxt-bugsnag/commit/f9550c27232fc251b0b19689479dbc3ba7925814))
+
 ## [4.1.0](https://github.com/julianmar/nuxt-bugsnag/compare/v4.0.1...v4.1.0) (2020-06-10)
 
 
