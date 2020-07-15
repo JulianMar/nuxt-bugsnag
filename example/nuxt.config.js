@@ -16,5 +16,20 @@ module.exports = {
       notifyReleaseStages: ['staging', 'production'],
       apiKey: 'YOUR_BROWSER_API_KEY'
     }
+  },
+  build: {
+    babel: {
+      presets ({ isServer }) {
+        return [
+          [
+            require.resolve('@nuxt/babel-preset-app-edge'), // For nuxt-edge users
+            {
+              buildTarget: isServer ? 'server' : 'client',
+              corejs: { version: 3 }
+            }
+          ]
+        ]
+      }
+    }
   }
 }
