@@ -1,6 +1,6 @@
 {
   "name": "nuxt-bugsnag",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "",
   "license": "MIT",
   "contributors": [
@@ -17,7 +17,7 @@
     "dev": "nuxt example",
     "lint": "eslint --ext .js,.vue example lib test",
     "test": "npm run lint && jest",
-    "release": "npm run test && standard-version && git push --follow-tags && npm publish",
+    "release": "standard-version && git push --follow-tags && npm publish",
     "codecov": "npm run "
   },
   "files": [
