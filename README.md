@@ -130,6 +130,24 @@ I would recommend to set these options
 }
 ```
 
+# Reporting custom errors
+The simplest answer is like this.
+```
+this.$bugsnag.notify(new Error('Some Error'))
+```
+
+This answer holds up for components and store.
+There are some places where it doesn't work like that, because this is not bound to the app.
+
+In Nuxt if you don't have this you will have context and there is `$bugsnag` under `app` so in code form:
+
+plugins/exampleLog.js
+```
+export default (context) => {
+  context.app.$bugsnag.notify(new Error('some Error')
+}
+```
+
 For more info check out this repo https://github.com/bugsnag/webpack-bugsnag-plugins
 
 ## Development
