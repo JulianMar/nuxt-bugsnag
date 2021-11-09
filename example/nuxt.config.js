@@ -1,14 +1,16 @@
-const { resolve } = require('path')
+import { resolve } from 'path'
+import { defineNuxtConfig } from '@nuxt/bridge'
+import module from '../lib/module.js'
 
-module.exports = {
+export default defineNuxtConfig({
   rootDir: resolve(__dirname, '..'),
   buildDir: resolve(__dirname, '.nuxt'),
   srcDir: __dirname,
   render: {
     resourceHints: false
   },
-  modules: [
-    { handler: require('../') }
+  buildModules: [
+    { handler: module }
   ],
 
   bugsnag: {
@@ -32,4 +34,4 @@ module.exports = {
       }
     }
   }
-}
+})
