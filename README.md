@@ -120,8 +120,8 @@ I would recommend to set these options
     // With options
     ['nuxt-bugsnag', {
       apiKey: 'YOUR_API_KEY',
+      releaseStage: process.env.NODE_ENV
       reporterOptions: {
-        releaseStage: process.env.NODE_ENV
         autoAssignRelease: true
       },
       publishRelease: true,
