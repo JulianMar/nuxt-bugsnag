@@ -22,6 +22,10 @@ jobs:
           paths:
             - "node_modules"
 
+      - run:
+          name: Prepare env
+          command: npm run dev:prepare
+
       # Tests
       - run:
           name: Tests
