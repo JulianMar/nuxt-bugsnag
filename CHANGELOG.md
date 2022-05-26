@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 5.1.0 (2022-05-26)
+
+
+### Features
+
+* add nuxt-kit integration ([51c9c48](https://github.com/JulianMar/nuxt-bugsnag/commit/51c9c48bb3cd038e9e71353bc75cf066b7b83523))
+* add prepare env ([793c9d6](https://github.com/JulianMar/nuxt-bugsnag/commit/793c9d637bcc4a0242bd6c2ba5801e512c325226))
+* add test ([3a23005](https://github.com/JulianMar/nuxt-bugsnag/commit/3a230053d257708d4a405ce076754274e1e52025))
+* update module to be more in sync ([df6d81c](https://github.com/JulianMar/nuxt-bugsnag/commit/df6d81c4130623db259acb5e91d3cc435df7a582))
+* update to v 5.0.0 ([a466e7a](https://github.com/JulianMar/nuxt-bugsnag/commit/a466e7aae060826ea249b3f7ba007e88f3486c77))
+
+
+### Bug Fixes
+
+* add more tests ([19f723c](https://github.com/JulianMar/nuxt-bugsnag/commit/19f723c9311302138f739212971587b0c97bc1a7))
+
 ### [4.2.2](https://github.com/julianmar/nuxt-bugsnag/compare/v4.2.1...v4.2.2) (2020-11-30)
 
 ### [4.2.1](https://github.com/julianmar/nuxt-bugsnag/compare/v4.1.2...v4.2.1) (2020-11-04)
