@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.2.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.1.0...v5.2.0) (2022-05-26)
+
+
+### Features
+
+* add any type more changes to docs ([bb30d21](https://github.com/JulianMar/nuxt-bugsnag/commit/bb30d2169da5fbf83e689d955ee816dc519ec506))
+
 ## 5.1.0 (2022-05-26)
 
 
