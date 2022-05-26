@@ -19,12 +19,16 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "release": "standard-version && git push --follow-tags && npm publish"
+    "release": "standard-version && git push --follow-tags && npm publish",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@bugsnag/js": "^7.16.5",
     "@bugsnag/plugin-vue": "^7.16.5",
-    "@nuxt/kit": "^3.0.0-rc.3"
+    "@nuxt/kit": "^3.0.0-rc.3",
+    "@nuxt/test-utils": "^3.0.0-rc.3",
+    "vitest": "^0.12.9"
   },
   "devDependencies": {
     "@bugsnag/source-maps": "^2.3.1",
