@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.2.2](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.2.1...v5.2.2) (2022-05-26)
+
+
+### Bug Fixes
+
+* vuePlugin handling ([1d6d0c1](https://github.com/JulianMar/nuxt-bugsnag/commit/1d6d0c1fc766cb4d48d4377251f0d36a05d80c4e))
+
 ### [5.2.1](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.2.0...v5.2.1) (2022-05-26)
 
 

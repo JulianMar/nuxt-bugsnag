@@ -1,6 +1,6 @@
 {
   "name": "nuxt-bugsnag",
-  "version": "5.2.1",
+  "version": "5.2.2",
   "license": "MIT",
   "type": "module",
   "exports": {
