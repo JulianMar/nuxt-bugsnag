@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     MyModule
   ],
   bugsnag: {
+    publishRelease: true,
     config: {
       notifyReleaseStages: ['staging', 'production'],
       apiKey: '317c3d7013a3dc4a9e152138bfe8c900'

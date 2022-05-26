@@ -1,15 +1,17 @@
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, addAutoImport, addTemplate, addComponent } from '@nuxt/kit'
 import { browser, node } from '@bugsnag/source-maps'
+import { BrowserConfig } from '@bugsnag/js'
 
+const { resolve } = createResolver(import.meta.url)
 export interface ModuleOptions {
   disabled: boolean,
   publishRelease: boolean,
-  config: {
+  config: Partial<{
     apiKey: string,
-    notifyReleaseStages: string[]
-    environment: string,
-    appVersion: string
-  },
+    notifyReleaseStages?: string[]
+    environment?: string,
+    appVersion?: string
+  }| BrowserConfig>,
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -27,12 +29,17 @@ export default defineNuxtModule<ModuleOptions>({
       appVersion: '1.0.0'
     }
   },
+  hooks: {
+    'autoImports:extend': (imports) => {
+      imports.push({ name: 'useBugsnag', as: 'useBugsnag', from: resolve('./runtime/composables/useBugsnag') })
+    }
+  },
   setup (options, nuxt) {
     if (options.disabled) {
       return
     }
 
-    const { resolve } = createResolver(import.meta.url)
+    nuxt.options.runtimeConfig.public.bugsnag = options.config
 
     addPlugin(resolve('./runtime/plugin'))
 
@@ -40,7 +47,6 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    nuxt.options.runtimeConfig.public.bugsnag = options.config
     nuxt.options.vite.build.sourcemap = 'hidden'
 
     nuxt.options.nitro.hooks = {
@@ -49,7 +55,9 @@ export default defineNuxtModule<ModuleOptions>({
           return
         }
 
-        nitro.logger.start('\n upload of sourcemaps to bugsnag \n')
+        nitro.logger.log('')
+        nitro.logger.start('upload of sourcemaps to bugsnag \n')
+
         await node.uploadMultiple({
           apiKey: options.config.apiKey,
           appVersion: options.config.appVersion,
@@ -68,7 +76,8 @@ export default defineNuxtModule<ModuleOptions>({
           baseUrl: 'http://localhost:3000'
         })
 
-        nitro.logger.success('\n upload of sourcemaps to bugsnag \n')
+        nitro.logger.log('')
+        nitro.logger.success('upload of sourcemaps to bugsnag \n')
       }
     }
   }

@@ -15,7 +15,6 @@
 
 <script>
 export default {
-  name: "BadButtons",
   data: () => ({
     ok: true,
     list: [],
