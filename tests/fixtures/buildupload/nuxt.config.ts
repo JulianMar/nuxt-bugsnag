@@ -1,12 +1,12 @@
 import { defineNuxtConfig } from 'nuxt'
-import MyModule from '..'
+import MyModule from '../../..'
 
 export default defineNuxtConfig({
   modules: [
     MyModule
   ],
   bugsnag: {
-    disabled: process.env.DISABLE_BUGSNAG === 'true' || false,
+    disabled: false,
     publishRelease: true,
     config: {
       notifyReleaseStages: ['staging', 'production', 'dev'],
