@@ -17,7 +17,10 @@ export interface ModuleOptions {
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-bugsnag',
-    configKey: 'bugsnag'
+    configKey: 'bugsnag',
+    compatibility: {
+      nuxt: '^3.0'
+    }
   },
   defaults: {
     disabled: false,
