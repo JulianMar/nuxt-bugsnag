@@ -108,7 +108,7 @@ Copyright (c) Julian Martin <julian.martin@russmedia.com>
 [npm-downloads-href]: https://npmjs.com/package/nuxt-bugsnag
 
 [circle-ci-src]: https://circleci.com/gh/JulianMar/nuxt-bugsnag/tree/master.svg?style=shield
-[circle-ci-href]: https://circleci.com/gh/julianmar/nuxt-bugsnag
+[circle-ci-href]: https://circleci.com/gh/JulianMar/nuxt-bugsnag
 
 [codecov-src]: https://img.shields.io/codecov/c/github/julianmar/nuxt-bugsnag.svg?style=flat-square
 [codecov-href]: https://codecov.io/gh/julianmar/nuxt-bugsnag
