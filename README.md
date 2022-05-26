@@ -2,7 +2,6 @@
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![CircleCI][circle-ci-src]][circle-ci-href]
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
@@ -106,9 +105,6 @@ Copyright (c) Julian Martin <julian.martin@russmedia.com>
 
 [npm-downloads-src]: https://img.shields.io/npm/dt/nuxt-bugsnag.svg?style=flat-square
 [npm-downloads-href]: https://npmjs.com/package/nuxt-bugsnag
-
-[circle-ci-src]: https://circleci.com/gh/JulianMar/nuxt-bugsnag/tree/master.svg?style=shield
-[circle-ci-href]: https://circleci.com/gh/JulianMar/nuxt-bugsnag
 
 [codecov-src]: https://img.shields.io/codecov/c/github/julianmar/nuxt-bugsnag.svg?style=flat-square
 [codecov-href]: https://codecov.io/gh/julianmar/nuxt-bugsnag
