@@ -36,6 +36,7 @@ You can pass every bugsnag [options](https://docs.bugsnag.com/platforms/javascri
 {
   bugsnag: {
     config: {
+      apiKey: 'your key',
       enabledReleaseStages: ['staging', 'production'],
     }
   }
@@ -65,10 +66,13 @@ I would recommend to set these options
   ],
 
   bugsnag: {
-    apiKey: 'YOUR_API_KEY',
-    releaseStage: process.env.NODE_ENV
-    appVersion: 'YOUR_VERSION',
     publishRelease: true,
+    config: {
+      apiKey: 'YOUR_API_KEY',
+      enabledReleaseStages: ['staging', 'production'],
+      releaseStage: process.env.NODE_ENV
+      appVersion: 'YOUR_VERSION',
+    }
   }
 }
 ```

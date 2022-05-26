@@ -39,7 +39,7 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    nuxt.options.runtimeConfig.public.bugsnag = options.config
+    nuxt.options.runtimeConfig.public.bugsnag = options.config as any
 
     addPlugin(resolve('./runtime/plugin'))
 
