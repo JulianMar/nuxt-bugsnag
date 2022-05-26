@@ -1,4 +1,4 @@
-import { defineNuxtModule, addPlugin, createResolver, addAutoImport, addTemplate, addComponent } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, isNuxt3 } from '@nuxt/kit'
 import { browser, node } from '@bugsnag/source-maps'
 import { BrowserConfig } from '@bugsnag/js'
 
@@ -39,11 +39,15 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    nuxt.options.runtimeConfig.public.bugsnag = options.config as any
+    if (isNuxt3()) {
+      nuxt.options.runtimeConfig.public.bugsnag = options.config as any
+    } else {
+      nuxt.options.publicRuntimeConfig.bugsnag = options.config as any
+    }
 
     addPlugin(resolve('./runtime/plugin'))
 
-    if (!options.publishRelease) {
+    if (!options.publishRelease || !isNuxt3()) {
       return
     }
 
