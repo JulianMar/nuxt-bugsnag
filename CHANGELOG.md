@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.4.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.3.0...v5.4.0) (2022-06-02)
+
+
+### Features
+
+* cleanup ([2e92d8e](https://github.com/JulianMar/nuxt-bugsnag/commit/2e92d8e3fcb9db8e0d50fbe76549537a833fc665))
+* move to github actions ([c133cca](https://github.com/JulianMar/nuxt-bugsnag/commit/c133cca5665722a34c0bcbff12c5de1ed550c9eb))
+* rename workflow ([f424280](https://github.com/JulianMar/nuxt-bugsnag/commit/f42428096c3ef27f45c3aa25b2add300a6475673))
+* use correct file ([d8805d4](https://github.com/JulianMar/nuxt-bugsnag/commit/d8805d45e95dacb50b65f9e1c79ee5d16e410c2b))
+* use json ([f2524b4](https://github.com/JulianMar/nuxt-bugsnag/commit/f2524b4792d98c51905be1cee9830963f4dc7309))
+
+
+### Bug Fixes
+
+* name ([f0204ef](https://github.com/JulianMar/nuxt-bugsnag/commit/f0204ef82a805bf951e0ca7437f97205b11462a3))
+* remove 14 ([4d227d3](https://github.com/JulianMar/nuxt-bugsnag/commit/4d227d3fc6c363aa3e8f3c60d5a56a3988e622be))
+
 ## [5.3.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.2.2...v5.3.0) (2022-05-26)
 
 
