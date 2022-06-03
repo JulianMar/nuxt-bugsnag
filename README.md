@@ -9,6 +9,10 @@
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
+## Nuxt2
+
+If you are using Nuxt2 see [here](https://github.com/JulianMar/nuxt-bugsnag/tree/v4.2.2)
+
 ## Setup
 
 1. Add `nuxt-bugsnag` dependency to your project
