@@ -56,6 +56,10 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
+    extendWebpackConfig((config) => {
+      config.devtool = '#source-map'
+    })
+
     extendViteConfig((config) => {
       config.build.sourcemap = 'hidden'
     })
@@ -92,6 +96,38 @@ export default defineNuxtModule<ModuleOptions>({
             nitro.logger.success('upload of sourcemaps to bugsnag \n')
           }
         }
+      },
+      'build:done': async (config) => {
+        if (isNuxt3) {
+          return
+        }
+        config.nuxt._logger.log('')
+        config.nuxt._logger.start('upload of sourcemaps to bugsnag \n')
+
+        const promises = []
+
+        promises.push(node.uploadMultiple({
+          apiKey: options.config.apiKey,
+          appVersion: options.config.appVersion,
+          directory: join(config.options.buildDir, 'dist', 'server'),
+          logger: config.nuxt._logger,
+          overwrite: true,
+          projectRoot: '/'
+        }))
+
+        promises.push(browser.uploadMultiple({
+          apiKey: options.config.apiKey,
+          appVersion: options.config.appVersion,
+          directory: join(config.options.buildDir, 'dist', 'client'),
+          logger: config.nuxt._logger,
+          overwrite: true,
+          baseUrl: 'http://localhost:3000/_nuxt'
+        }))
+
+        await Promise.all(promises)
+
+        config.nuxt._logger.log('')
+        config.nuxt._logger.success('upload of sourcemaps to bugsnag \n')
       }
     })
   }
