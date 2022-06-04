@@ -1,7 +1,6 @@
 import { defineNuxtModule, addPlugin, createResolver, isNuxt3, extendWebpackConfig, extendViteConfig } from '@nuxt/kit'
 import { browser, node } from '@bugsnag/source-maps'
 import { BrowserConfig } from '@bugsnag/js'
-import { join } from 'node:path'
 
 const { resolve } = createResolver(import.meta.url)
 export interface ModuleOptions {
@@ -11,7 +10,8 @@ export interface ModuleOptions {
     apiKey: string,
     notifyReleaseStages?: string[]
     environment?: string,
-    appVersion?: string
+    appVersion?: string,
+    baseUrl?: string
   } | Partial<BrowserConfig>,
 }
 
@@ -31,7 +31,8 @@ export default defineNuxtModule<ModuleOptions>({
       notifyReleaseStages: [],
       apiKey: '',
       environment: 'production',
-      appVersion: '1.0.0'
+      appVersion: '1.0.0',
+      baseUrl: 'http://localhost:3000'
     }
   },
   hooks: {
@@ -83,7 +84,7 @@ export default defineNuxtModule<ModuleOptions>({
               directory: nitro.options.output.publicDir,
               logger: nitro.logger,
               overwrite: true,
-              baseUrl: 'http://localhost:3000'
+              baseUrl: options.config.baseUrl
             }))
 
             await Promise.all(promises)

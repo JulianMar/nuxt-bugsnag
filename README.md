@@ -54,12 +54,14 @@ You can pass every bugsnag [options](https://docs.bugsnag.com/platforms/javascri
 # Source Maps
 
 You can upload sourcemaps by adding the option `publishRelease`.
+It's important to set the baseUrl aswell, it will allow bugsnag to map your errors to the sourcemap
 
 ```js
 {
   bugsnag: {
     config: {
       publishRelease: true,
+      baseUrl: 'http://localhost:3000'
     }
   }
 }
