@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.5.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.4.1...v5.5.0) (2022-06-04)
+
+
+### Features
+
+* make usable in nuxt bridge ([3a96b0e](https://github.com/JulianMar/nuxt-bugsnag/commit/3a96b0e8568a38825acd0e6934889712abaecabb))
+
+
+### Bug Fixes
+
+* activate nitro ([ad0af50](https://github.com/JulianMar/nuxt-bugsnag/commit/ad0af501cd4dad69e1caf8e3a0b98ecac5c9a165))
+* for baseUrl ([884a211](https://github.com/JulianMar/nuxt-bugsnag/commit/884a211cee4c04c4b3777fd6a5acde1586a3376e))
+* ts errors ([c5e1e29](https://github.com/JulianMar/nuxt-bugsnag/commit/c5e1e2979fa222c1ff7734a11fd42ebbec054b82))
+
 ### [5.4.1](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.4.0...v5.4.1) (2022-06-02)
 
 ## [5.4.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.3.0...v5.4.0) (2022-06-02)
