@@ -3,7 +3,7 @@ import Bugsnag from '../dist/module.mjs'
 
 export default defineNuxtConfig({
   bridge: {
-    nitro: false
+    nitro: true
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
