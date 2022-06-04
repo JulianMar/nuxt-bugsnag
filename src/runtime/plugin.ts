@@ -1,8 +1,6 @@
 import Bugsnag, { BrowserConfig, Client } from '@bugsnag/js'
 import BugsnagPluginVue from '@bugsnag/plugin-vue'
 import { defineNuxtPlugin, isVue2 } from '#app'
-
-let client: null|Client = null
 export default defineNuxtPlugin((nuxtApp) => {
   const options: BrowserConfig = { ...nuxtApp.payload.config.public.bugsnag }
 
@@ -14,9 +12,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     })
   }
 
-  if (client === null) {
-    client = Bugsnag.start(options)
-  }
+  const client = Bugsnag.start(options)
 
   nuxtApp.vueApp.provide<Client>('bugsnag-client', client)
 
