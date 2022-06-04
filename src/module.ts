@@ -6,12 +6,12 @@ const { resolve } = createResolver(import.meta.url)
 export interface ModuleOptions {
   disabled: boolean,
   publishRelease: boolean,
+  baseUrl?: string
   config: {
     apiKey: string,
     notifyReleaseStages?: string[]
     environment?: string,
     appVersion?: string,
-    baseUrl?: string
   } | Partial<BrowserConfig>,
 }
 
@@ -27,12 +27,12 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {
     disabled: false,
     publishRelease: false,
+    baseUrl: 'http://localhost:3000',
     config: {
       notifyReleaseStages: [],
       apiKey: '',
       environment: 'production',
-      appVersion: '1.0.0',
-      baseUrl: 'http://localhost:3000'
+      appVersion: '1.0.0'
     }
   },
   hooks: {
@@ -67,7 +67,7 @@ export default defineNuxtModule<ModuleOptions>({
           compiled: async (nitro) => {
             nitro.logger.log('')
             nitro.logger.start('upload of sourcemaps to bugsnag \n')
-            const promises = []
+            const promises: Promise<void>[] = []
 
             promises.push(node.uploadMultiple({
               apiKey: options.config.apiKey,
@@ -84,7 +84,7 @@ export default defineNuxtModule<ModuleOptions>({
               directory: nitro.options.output.publicDir,
               logger: nitro.logger,
               overwrite: true,
-              baseUrl: options.config.baseUrl
+              baseUrl: options.baseUrl
             }))
 
             await Promise.all(promises)
