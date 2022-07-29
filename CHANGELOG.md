@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.6.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.5.1...v5.6.0) (2022-07-29)
+
+
+### Features
+
+* update deps ([b102bcc](https://github.com/JulianMar/nuxt-bugsnag/commit/b102bccd0b442e495490d6e0903b65f984d6aa6c))
+
+
+### Bug Fixes
+
+* add prettier config and reformat ([67e1645](https://github.com/JulianMar/nuxt-bugsnag/commit/67e1645067c39c1c981270cd7c6b40cabc9e980b))
+
 ### [5.5.1](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.5.0...v5.5.1) (2022-07-27)
 
 ## [5.5.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.4.1...v5.5.0) (2022-06-04)
