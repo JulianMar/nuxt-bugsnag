@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@nuxt/test-utils": "^3.0.0-rc.3",
-    "vitest": "^0.13.0",
+    "vitest": "^0.19.0",
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
     "c8": "^7.11.3",
