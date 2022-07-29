@@ -1,18 +1,27 @@
-import { defineNuxtModule, addPlugin, createResolver, isNuxt3, extendWebpackConfig, extendViteConfig } from '@nuxt/kit'
+import {
+  defineNuxtModule,
+  addPlugin,
+  createResolver,
+  isNuxt3,
+  extendWebpackConfig,
+  extendViteConfig
+} from '@nuxt/kit'
 import { browser, node } from '@bugsnag/source-maps'
 import { BrowserConfig } from '@bugsnag/js'
 
 const { resolve } = createResolver(import.meta.url)
 export interface ModuleOptions {
-  disabled: boolean,
-  publishRelease: boolean,
+  disabled: boolean
+  publishRelease: boolean
   baseUrl?: string
-  config: {
-    apiKey: string,
-    notifyReleaseStages?: string[]
-    environment?: string,
-    appVersion?: string,
-  } | Partial<BrowserConfig>,
+  config:
+    | {
+        apiKey: string
+        notifyReleaseStages?: string[]
+        environment?: string
+        appVersion?: string
+      }
+    | Partial<BrowserConfig>
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -37,10 +46,14 @@ export default defineNuxtModule<ModuleOptions>({
   },
   hooks: {
     'autoImports:extend': (imports) => {
-      imports.push({ name: 'useBugsnag', as: 'useBugsnag', from: resolve('./runtime/composables/useBugsnag') })
+      imports.push({
+        name: 'useBugsnag',
+        as: 'useBugsnag',
+        from: resolve('./runtime/composables/useBugsnag')
+      })
     }
   },
-  setup (options, nuxt) {
+  setup(options, nuxt) {
     if (options.disabled) {
       return
     }
@@ -70,23 +83,27 @@ export default defineNuxtModule<ModuleOptions>({
             nitro.logger.start('upload of sourcemaps to bugsnag \n')
             const promises: Promise<void>[] = []
 
-            promises.push(node.uploadMultiple({
-              apiKey: options.config.apiKey,
-              appVersion: options.config.appVersion,
-              directory: nitro.options.output.serverDir,
-              logger: nitro.logger,
-              overwrite: true,
-              projectRoot: '/'
-            }))
+            promises.push(
+              node.uploadMultiple({
+                apiKey: options.config.apiKey,
+                appVersion: options.config.appVersion,
+                directory: nitro.options.output.serverDir,
+                logger: nitro.logger,
+                overwrite: true,
+                projectRoot: '/'
+              })
+            )
 
-            promises.push(browser.uploadMultiple({
-              apiKey: options.config.apiKey,
-              appVersion: options.config.appVersion,
-              directory: nitro.options.output.publicDir,
-              logger: nitro.logger,
-              overwrite: true,
-              baseUrl: options.baseUrl
-            }))
+            promises.push(
+              browser.uploadMultiple({
+                apiKey: options.config.apiKey,
+                appVersion: options.config.appVersion,
+                directory: nitro.options.output.publicDir,
+                logger: nitro.logger,
+                overwrite: true,
+                baseUrl: options.baseUrl
+              })
+            )
 
             await Promise.all(promises)
 

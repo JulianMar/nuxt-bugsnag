@@ -13,7 +13,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   }
 
   // we check the internal client to prevent the [bugsnag] Bugsnag.start() was called more than once. Ignoring. error
-  let client: Client|null = (Bugsnag as any)._client
+  let client: Client | null = (Bugsnag as any)._client
   if (client === null) {
     client = Bugsnag.start(options)
   }
