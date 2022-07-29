@@ -38,6 +38,10 @@ export default defineNuxtModule<ModuleOptions>({
   hooks: {
     'autoImports:extend': (imports) => {
       imports.push({ name: 'useBugsnag', as: 'useBugsnag', from: resolve('./runtime/composables/useBugsnag') })
+    },
+    'vite:extendConfig': (config) => {
+      config.build.sourcemap = 'hidden'
+      config.optimizeDeps.include.push('@bugsnag/plugin-vue')
     }
   },
   setup (options, nuxt) {
@@ -56,11 +60,6 @@ export default defineNuxtModule<ModuleOptions>({
     if (!options.publishRelease || nuxt.options.dev) {
       return
     }
-
-    extendViteConfig((config) => {
-      config.build.sourcemap = 'hidden'
-      config.optimizeDeps.include.push('@bugsnag/plugin-vue')
-    })
 
     nuxt.addHooks({
       'nitro:config': (config) => {
