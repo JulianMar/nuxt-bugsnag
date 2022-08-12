@@ -59,10 +59,8 @@ It's important to set the baseUrl aswell, it will allow bugsnag to map your erro
 ```js
 {
   bugsnag: {
-    config: {
-      publishRelease: true,
-      baseUrl: 'http://localhost:3000'
-    }
+    publishRelease: true,
+    baseUrl: 'http://localhost:3000'
   }
 }
 ```
