@@ -65,6 +65,10 @@ It's important to set the baseUrl as well, it will allow bugsnag to map your err
 }
 ```
 
+### Setting a different project root
+
+If your Nuxt App runs in a different folder than `/`, you might want to set `projectRoot` to this directory, so that BugSnag can match the sourcemap.
+
 ## Config Example
 
 I would recommend to set these options
@@ -81,13 +85,13 @@ I would recommend to set these options
       enabledReleaseStages: ['staging', 'production'],
       releaseStage: process.env.NODE_ENV
       appVersion: 'YOUR_VERSION',
-      projectRoot: '/'
     }
   }
 }
 ```
 
 ## Reporting custom errors
+
 The simplest answer is like this.
 ```
 this.$bugsnag.notify(new Error('Some Error'))
