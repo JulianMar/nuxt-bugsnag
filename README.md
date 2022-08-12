@@ -81,6 +81,7 @@ I would recommend to set these options
       enabledReleaseStages: ['staging', 'production'],
       releaseStage: process.env.NODE_ENV
       appVersion: 'YOUR_VERSION',
+      projectRoot: '/'
     }
   }
 }
