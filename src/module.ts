@@ -66,13 +66,16 @@ export default defineNuxtModule<ModuleOptions>({
 
     addPlugin(resolve('./runtime/plugin'))
 
+    extendViteConfig((config) => {
+      config.optimizeDeps.include.push('@bugsnag/plugin-vue')
+    })
+
     if (!options.publishRelease || nuxt.options.dev) {
       return
     }
 
     extendViteConfig((config) => {
       config.build.sourcemap = 'hidden'
-      config.optimizeDeps.include.push('@bugsnag/plugin-vue')
     })
 
     nuxt.addHooks({
