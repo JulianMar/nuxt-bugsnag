@@ -51,10 +51,10 @@ You can pass every bugsnag [options](https://docs.bugsnag.com/platforms/javascri
 ```
 
 
-# Source Maps
+### Source Maps
 
 You can upload sourcemaps by adding the option `publishRelease`.
-It's important to set the baseUrl aswell, it will allow bugsnag to map your errors to the sourcemap
+It's important to set the baseUrl as well, it will allow bugsnag to map your errors to the sourcemap:
 
 ```js
 {
@@ -64,6 +64,8 @@ It's important to set the baseUrl aswell, it will allow bugsnag to map your erro
   }
 }
 ```
+
+## Config Example
 
 I would recommend to set these options
 ```js
@@ -84,7 +86,7 @@ I would recommend to set these options
 }
 ```
 
-# Reporting custom errors
+## Reporting custom errors
 The simplest answer is like this.
 ```
 this.$bugsnag.notify(new Error('Some Error'))
