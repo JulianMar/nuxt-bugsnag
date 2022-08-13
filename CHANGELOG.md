@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.7.1](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.7.0...v5.7.1) (2022-08-13)
+
+
+### Bug Fixes
+
+* module ts error ([6999173](https://github.com/JulianMar/nuxt-bugsnag/commit/6999173e299000654e283d9a5610354e8c409081))
+
 ## [5.7.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.6.0...v5.7.0) (2022-08-13)
 
 
