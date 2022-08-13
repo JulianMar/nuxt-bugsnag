@@ -20,6 +20,7 @@ export interface ModuleOptions {
         notifyReleaseStages?: string[]
         environment?: string
         appVersion?: string
+        projectRoot?: string
       }
     | Partial<BrowserConfig>
 }
@@ -41,7 +42,8 @@ export default defineNuxtModule<ModuleOptions>({
       notifyReleaseStages: [],
       apiKey: '',
       environment: 'production',
-      appVersion: '1.0.0'
+      appVersion: '1.0.0',
+      projectRoot: '/'
     }
   },
   hooks: {
@@ -93,7 +95,7 @@ export default defineNuxtModule<ModuleOptions>({
                 directory: nitro.options.output.serverDir,
                 logger: nitro.logger,
                 overwrite: true,
-                projectRoot: '/'
+                projectRoot: options.config.projectRoot
               })
             )
 
