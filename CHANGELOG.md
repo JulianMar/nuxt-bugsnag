@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.7.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.6.0...v5.7.0) (2022-08-13)
+
+
+### Features
+
+* make project root configurable ([#36](https://github.com/JulianMar/nuxt-bugsnag/issues/36)) ([6670481](https://github.com/JulianMar/nuxt-bugsnag/commit/66704812c53033b8f78c10414809c4bfdac4ded0))
+* update deps ([20f8409](https://github.com/JulianMar/nuxt-bugsnag/commit/20f840931e3d228e4f7fdfaf018df0c5492a1338))
+
+
+### Bug Fixes
+
+* optimizing deps if publishRelease is false ([#35](https://github.com/JulianMar/nuxt-bugsnag/issues/35)) ([a2b29d8](https://github.com/JulianMar/nuxt-bugsnag/commit/a2b29d85cdb7138c5cc104e19ef94d69f1979051))
+
 ## [5.6.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.5.1...v5.6.0) (2022-07-29)
 
 
