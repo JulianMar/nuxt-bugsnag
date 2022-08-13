@@ -3,7 +3,6 @@ import {
   addPlugin,
   createResolver,
   isNuxt3,
-  extendWebpackConfig,
   extendViteConfig
 } from '@nuxt/kit'
 import { browser, node } from '@bugsnag/source-maps'
@@ -14,13 +13,13 @@ export interface ModuleOptions {
   disabled: boolean
   publishRelease: boolean
   baseUrl?: string
+  projectRoot: string
   config:
     | {
         apiKey: string
         notifyReleaseStages?: string[]
         environment?: string
         appVersion?: string
-        projectRoot?: string
       }
     | Partial<BrowserConfig>
 }
@@ -42,9 +41,9 @@ export default defineNuxtModule<ModuleOptions>({
       notifyReleaseStages: [],
       apiKey: '',
       environment: 'production',
-      appVersion: '1.0.0',
-      projectRoot: '/'
-    }
+      appVersion: '1.0.0'
+    },
+    projectRoot: '/'
   },
   hooks: {
     'autoImports:extend': (imports) => {
@@ -95,7 +94,7 @@ export default defineNuxtModule<ModuleOptions>({
                 directory: nitro.options.output.serverDir,
                 logger: nitro.logger,
                 overwrite: true,
-                projectRoot: options.config.projectRoot
+                projectRoot: options.projectRoot
               })
             )
 

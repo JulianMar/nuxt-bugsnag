@@ -69,6 +69,15 @@ It's important to set the baseUrl as well, it will allow bugsnag to map your err
 
 If your Nuxt App runs in a different folder than `/`, you might want to set `projectRoot` to this directory, so that BugSnag can match the sourcemap.
 
+```js
+{
+  bugsnag: {
+    publishRelease: true,
+    projectRoot: '/someFolder/'
+  }
+}
+```
+
 ## Config Example
 
 I would recommend to set these options
