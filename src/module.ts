@@ -68,7 +68,7 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolve('./runtime/plugin'))
 
     extendViteConfig((config) => {
-      config.optimizeDeps.include.push('@bugsnag/plugin-vue')
+      config.optimizeDeps.include.push(...['@bugsnag/plugin-vue', '@bugsnag/js'])
     })
 
     if (!options.publishRelease || nuxt.options.dev) {
