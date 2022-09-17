@@ -7,12 +7,13 @@ import {
 } from '@nuxt/kit'
 import { browser, node } from '@bugsnag/source-maps'
 import { BrowserConfig } from '@bugsnag/js'
+import { join } from 'node:path'
 
 const { resolve } = createResolver(import.meta.url)
 export interface ModuleOptions {
   disabled: boolean
   publishRelease: boolean
-  baseUrl?: string
+  baseUrl: string
   projectRoot: string
   config:
     | {
@@ -29,7 +30,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-bugsnag',
     configKey: 'bugsnag',
     compatibility: {
-      nuxt: '^3.0.0 || ^2.16.0',
+      nuxt: '^3.0.0-rc.10 || ^2.16.0',
       bridge: true
     }
   },
@@ -46,7 +47,7 @@ export default defineNuxtModule<ModuleOptions>({
     projectRoot: '/'
   },
   hooks: {
-    'autoImports:extend': (imports) => {
+    'imports:extend': (imports) => {
       imports.push({
         name: 'useBugsnag',
         as: 'useBugsnag',
@@ -68,16 +69,16 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolve('./runtime/plugin'))
 
     extendViteConfig((config) => {
-      config.optimizeDeps.include.push(...['@bugsnag/plugin-vue', '@bugsnag/js'])
+      config.optimizeDeps.include.push(
+        ...['@bugsnag/plugin-vue', '@bugsnag/js']
+      )
     })
 
     if (!options.publishRelease || nuxt.options.dev) {
       return
     }
 
-    extendViteConfig((config) => {
-      config.build.sourcemap = 'hidden'
-    })
+    nuxt.options.sourcemap = { server: true, client: true }
 
     nuxt.addHooks({
       'nitro:config': (config) => {
@@ -89,7 +90,7 @@ export default defineNuxtModule<ModuleOptions>({
 
             promises.push(
               node.uploadMultiple({
-                apiKey: options.config.apiKey,
+                apiKey: options.config.apiKey!,
                 appVersion: options.config.appVersion,
                 directory: nitro.options.output.serverDir,
                 logger: nitro.logger,
@@ -100,7 +101,7 @@ export default defineNuxtModule<ModuleOptions>({
 
             promises.push(
               browser.uploadMultiple({
-                apiKey: options.config.apiKey,
+                apiKey: options.config.apiKey!,
                 appVersion: options.config.appVersion,
                 directory: nitro.options.output.publicDir,
                 logger: nitro.logger,
