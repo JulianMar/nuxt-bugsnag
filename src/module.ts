@@ -7,7 +7,6 @@ import {
 } from '@nuxt/kit'
 import { browser, node } from '@bugsnag/source-maps'
 import { BrowserConfig } from '@bugsnag/js'
-import { join } from 'node:path'
 
 const { resolve } = createResolver(import.meta.url)
 export interface ModuleOptions {
@@ -30,7 +29,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-bugsnag',
     configKey: 'bugsnag',
     compatibility: {
-      nuxt: '^3.0.0-rc.10 || ^2.16.0',
+      nuxt: '^3.0.0-rc.10 || ^3.0.0 || ^2.16.0',
       bridge: true
     }
   },
@@ -69,7 +68,7 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolve('./runtime/plugin'))
 
     extendViteConfig((config) => {
-      config.optimizeDeps.include.push(
+      config.optimizeDeps?.include?.push(
         ...['@bugsnag/plugin-vue', '@bugsnag/js']
       )
     })

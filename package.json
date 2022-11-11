@@ -34,17 +34,17 @@
     "@bugsnag/js": "^7.16.5",
     "@bugsnag/plugin-vue": "^7.16.5",
     "@bugsnag/source-maps": "^2.3.1",
-    "@nuxt/kit": "^3.0.0-rc.10"
+    "@nuxt/kit": "^3.0.0-rc.13"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
-    "@nuxt/test-utils": "^3.0.0-rc.3",
+    "@nuxt/test-utils": "^3.0.0-rc.13",
     "@nuxtjs/eslint-config-typescript": "latest",
-    "@vitest/coverage-c8": "^0.23.2",
+    "@vitest/coverage-c8": "^0.25.0",
     "c8": "^7.11.3",
     "eslint": "latest",
     "nuxt": "^3.0.0-rc.10",
     "standard-version": "^9.5.0",
-    "vitest": "^0.23.0"
+    "vitest": "^0.25.0"
   }
 }
