@@ -80,8 +80,8 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.sourcemap = { server: true, client: true }
 
     nuxt.addHooks({
-      'nitro:config': (config) => {
-        config.hooks = {
+      'nitro:init': (nitro) => {
+        nitro.hooks.addHooks({
           compiled: async (nitro) => {
             nitro.logger.log('')
             nitro.logger.start('upload of sourcemaps to bugsnag \n')
@@ -114,7 +114,7 @@ export default defineNuxtModule<ModuleOptions>({
             nitro.logger.log('')
             nitro.logger.success('upload of sourcemaps to bugsnag \n')
           }
-        }
+        })
       }
     })
   }
