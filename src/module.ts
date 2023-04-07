@@ -8,6 +8,8 @@ import {
 import { browser, node } from '@bugsnag/source-maps'
 import { BrowserConfig } from '@bugsnag/js'
 
+export type { Bugsnag } from './runtime/types'
+
 const { resolve } = createResolver(import.meta.url)
 export interface ModuleOptions {
   disabled: boolean

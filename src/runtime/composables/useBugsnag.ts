@@ -1,4 +1,8 @@
 import { useNuxtApp } from '#app'
+import { Bugsnag } from '../types'
+
 export const useBugsnag = () => {
-  return useNuxtApp().$bugsnag
+  const bugsnag: Bugsnag = useNuxtApp().$bugsnag
+
+  return bugsnag
 }
