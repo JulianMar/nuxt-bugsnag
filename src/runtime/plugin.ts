@@ -1,8 +1,11 @@
 import Bugsnag, { BrowserConfig, Client } from '@bugsnag/js'
 import BugsnagPluginVue from '@bugsnag/plugin-vue'
-import { defineNuxtPlugin, isVue2 } from '#app'
+import { defineNuxtPlugin, isVue2, useRuntimeConfig } from '#app'
+import { RuntimeConfig } from '@nuxt/schema'
+
 export default defineNuxtPlugin((nuxtApp) => {
-  const options: BrowserConfig = { ...nuxtApp.payload.config.public.bugsnag }
+  const config: RuntimeConfig = useRuntimeConfig()
+  const options: BrowserConfig = { ...config.public.bugsnag }
 
   options.plugins = [new BugsnagPluginVue()]
   options.onError = (event) => {
