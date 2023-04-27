@@ -1,6 +1,5 @@
 import path from 'node:path'
 import MyModule from '..'
-import { defineNuxtConfig } from '#app'
 
 export default defineNuxtConfig({
   modules: [MyModule],
