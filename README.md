@@ -65,6 +65,18 @@ It's important to set the baseUrl as well, it will allow bugsnag to map your err
 }
 ```
 
+The output for a medium Nuxt App can get quite big. So we added an option to disable the logs for that case.
+```js
+{
+  bugsnag: {
+    publishRelease: true,
+    disableLogs: true,
+    baseUrl: 'http://localhost:3000'
+  }
+}
+```
+
+
 ### Setting a different project root
 
 If your Nuxt App runs in a different folder than `/`, you might want to set `projectRoot` to this directory, so that BugSnag can match the sourcemap.
