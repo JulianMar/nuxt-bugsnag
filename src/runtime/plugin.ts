@@ -25,11 +25,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   const vuePlugin = client.getPlugin('vue')
 
-  if (isVue2) {
-    vuePlugin.installVueErrorHandler(nuxtApp.vueApp)
-  } else {
-    nuxtApp.vueApp.use(vuePlugin)
-  }
+  nuxtApp.vueApp.use(vuePlugin)
 
   return {
     provide: {

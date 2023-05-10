@@ -29,7 +29,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-bugsnag',
     configKey: 'bugsnag',
     compatibility: {
-      nuxt: '^3.0.0-rc.10 || ^3.0.0 || ^2.16.0',
+      nuxt: ' ^3.0.0 || ^2.16.0',
       bridge: true
     }
   },
@@ -54,16 +54,12 @@ export default defineNuxtModule<ModuleOptions>({
       })
     }
   },
-  setup(options, nuxt) {
+  setup (options, nuxt) {
     if (options.disabled) {
       return
     }
 
-    if (isNuxt3()) {
-      nuxt.options.runtimeConfig.public.bugsnag = options.config as any
-    } else {
-      nuxt.options.publicRuntimeConfig.bugsnag = options.config as any
-    }
+    nuxt.options.runtimeConfig.public.bugsnag = options.config as any
 
     addPlugin(resolve('./runtime/plugin'))
 
