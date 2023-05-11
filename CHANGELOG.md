@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.1.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.9.2...v6.1.0) (2023-05-11)
+
+
+### Features
+
+* alot of new changes. ([b0593ce](https://github.com/JulianMar/nuxt-bugsnag/commit/b0593ce9262469385e2a4392e87d739acea086cf))
+* change key ([5d45aea](https://github.com/JulianMar/nuxt-bugsnag/commit/5d45aea0f7e738f68cbf1ca567edde3bf5af3a64))
+* disable logs option ([8dc5b58](https://github.com/JulianMar/nuxt-bugsnag/commit/8dc5b585cccb237b96725fc9ebf9413eef3d6a4d))
+* fix nuxt version to 3.3.3 because consola 3 is not supported ([245eac8](https://github.com/JulianMar/nuxt-bugsnag/commit/245eac8a04c63788f688b74c1cfbdd1bdd57da78))
+* template is synced with nuxt default ([6b6cc8d](https://github.com/JulianMar/nuxt-bugsnag/commit/6b6cc8d931bdb8bdf36198673c7df7332f0e6440))
+* update deps ([8bec847](https://github.com/JulianMar/nuxt-bugsnag/commit/8bec847d92d8ee87b58bca677e80f2b336ee047f))
+* update deps and remove nuxt 2 support ([cd89543](https://github.com/JulianMar/nuxt-bugsnag/commit/cd89543377af149f4ac9602aba489fd4c69bc00e))
+
+
+### Bug Fixes
+
+* tests ([3b3781b](https://github.com/JulianMar/nuxt-bugsnag/commit/3b3781b94f49d5c1a229005caffc1ff9ddea5a78))
+* tests - import was removed ([1752ce7](https://github.com/JulianMar/nuxt-bugsnag/commit/1752ce72b733ec967e29e5c3438049d8eecdfc70))
+
 ### [5.9.2](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.9.1...v5.9.2) (2023-04-17)
 
 ### [5.9.1](https://github.com/JulianMar/nuxt-bugsnag/compare/v5.9.0...v5.9.1) (2023-02-07)
