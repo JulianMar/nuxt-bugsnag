@@ -1,5 +1,4 @@
-export default defineEventHandler((event) => {
-  // console.log(event)
+export default defineEventHandler(() => {
   const test = new Error('error from server')
   useBugsnag().notify(test)
 

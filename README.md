@@ -13,9 +13,6 @@
 
 If you are using Nuxt2 see [here](https://github.com/JulianMar/nuxt-bugsnag/tree/v4.2.2)
 
-## Nuxt2 with Bridge
-
-It should work out of the box no changes needed. Only thing missing is support for uploading source maps on the webpack build.
 
 ## Setup
 

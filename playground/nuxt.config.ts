@@ -1,8 +1,7 @@
 import path from 'node:path'
-import MyModule from '..'
 
 export default defineNuxtConfig({
-  modules: [MyModule],
+  modules: ['../src/module'],
   bugsnag: {
     disabled: process.env.DISABLE_BUGSNAG === 'true' || false,
     publishRelease: true,

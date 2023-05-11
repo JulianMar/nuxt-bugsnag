@@ -1,8 +1,12 @@
 <template>
   <div>
-    <button @click="triggerComposable">using composable</button>
+    <button @click="triggerComposable">
+      using composable
+    </button>
 
-    <button @click="triggerInComposable">in composable</button>
+    <button @click="triggerInComposable">
+      in composable
+    </button>
   </div>
 </template>
 

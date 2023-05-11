@@ -1,14 +1,25 @@
 <template>
   <div id="buttons">
     <h3>Send some errors by clicking below:</h3>
-    <button @click="sendHandled">Send handled</button>
-    <button @click="sendUnhandled">Send unhandled</button>
-    <button @click="toggleOk">Trigger a render error</button>
+    <button @click="sendHandled">
+      Send handled
+    </button>
+    <button @click="sendUnhandled">
+      Send unhandled
+    </button>
+    <button @click="toggleOk">
+      Trigger a render error
+    </button>
     <button @click="triggerNextTickError">
       Throw an error during Vue.nextTick()
     </button>
-    <button @click="triggerWatchError">Trigger a handled watch error</button>
-    <a class="button" href="borked">Send an error from the server</a>
+    <button @click="triggerWatchError">
+      Trigger a handled watch error
+    </button>
+    <a
+      class="button"
+      href="borked"
+    >Send an error from the server</a>
     <span v-if="!ok">{{ list[10].text }}</span>
   </div>
 </template>

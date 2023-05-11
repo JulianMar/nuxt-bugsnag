@@ -8,8 +8,6 @@ import {
 } from '@nuxt/kit'
 import { browser, node } from '@bugsnag/source-maps'
 import { BrowserConfig } from '@bugsnag/js'
-
-const { resolve } = createResolver(import.meta.url)
 export interface ModuleOptions {
   disabled: boolean
   publishRelease: boolean
@@ -49,6 +47,7 @@ export default defineNuxtModule<ModuleOptions>({
     projectRoot: '/'
   },
   setup (options, nuxt) {
+    const { resolve } = createResolver(import.meta.url)
     if (options.disabled) {
       return
     }
@@ -96,7 +95,7 @@ export default defineNuxtModule<ModuleOptions>({
             if (options.disableLog) {
               logger.setReporters([
                 {
-                  log: (_) => {}
+                  log: () => {}
                 }
               ])
             }
