@@ -1,19 +1,11 @@
 import Bugsnag, { BrowserConfig, Client } from '@bugsnag/js'
-import BugsnagPluginVue from '@bugsnag/plugin-vue'
-import { defineNuxtPlugin, isVue2, useRuntimeConfig } from '#app'
 import { RuntimeConfig } from '@nuxt/schema'
+import enhanceOptions from './utils/enhanceOptions'
+// import { defineNuxtPlugin, useRuntimeConfig } from '#imports'
 
 export default defineNuxtPlugin((nuxtApp) => {
   const config: RuntimeConfig = useRuntimeConfig()
-  const options: BrowserConfig = { ...config.public.bugsnag }
-
-  options.plugins = [new BugsnagPluginVue()]
-  options.onError = (event) => {
-    event.errors[0].stacktrace = event.errors[0].stacktrace.map((row) => {
-      row.file = row.file.replace('file://', '')
-      return row
-    })
-  }
+  const options = enhanceOptions<BrowserConfig>(config.public.bugsnag)
 
   // we check the internal client to prevent the [bugsnag] Bugsnag.start() was called more than once. Ignoring. error
   let client: Client | null = (Bugsnag as any)._client
@@ -21,11 +13,13 @@ export default defineNuxtPlugin((nuxtApp) => {
     client = Bugsnag.start(options)
   }
 
-  nuxtApp.vueApp.provide<Client>('bugsnag-client', client)
+  nuxtApp.vueApp.provide('bugsnag-client', client)
 
-  const vuePlugin = client.getPlugin('vue')
+  const plugin = Bugsnag.getPlugin('vue')
 
-  nuxtApp.vueApp.use(vuePlugin)
+  if (plugin !== undefined) {
+    nuxtApp.vueApp.use(plugin)
+  }
 
   return {
     provide: {

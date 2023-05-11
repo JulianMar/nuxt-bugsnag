@@ -1,4 +1,4 @@
-import { useNuxtApp } from '#app'
+import { useNuxtApp } from '#imports'
 export const useBugsnag = () => {
   return useNuxtApp().$bugsnag
 }

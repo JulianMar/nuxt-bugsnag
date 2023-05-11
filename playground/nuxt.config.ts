@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     disableLog: true,
     config: {
       notifyReleaseStages: ['staging', 'production', 'dev'],
-      apiKey: '317c3d7013a3dc4a9e152138bfe8c900',
+      apiKey: '7a923d8f26b1a5d5e74234fe982340fb',
       environment: process.env.NODE_ENV
     },
     projectRoot: path.join(__dirname, '..')

@@ -2,8 +2,9 @@ import {
   defineNuxtModule,
   addPlugin,
   createResolver,
-  isNuxt3,
-  extendViteConfig
+  extendViteConfig,
+  addImports,
+  addServerPlugin
 } from '@nuxt/kit'
 import { browser, node } from '@bugsnag/source-maps'
 import { BrowserConfig } from '@bugsnag/js'
@@ -47,15 +48,6 @@ export default defineNuxtModule<ModuleOptions>({
     },
     projectRoot: '/'
   },
-  hooks: {
-    'imports:extend': (imports) => {
-      imports.push({
-        name: 'useBugsnag',
-        as: 'useBugsnag',
-        from: resolve('./runtime/composables/useBugsnag')
-      })
-    }
-  },
   setup (options, nuxt) {
     if (options.disabled) {
       return
@@ -65,8 +57,18 @@ export default defineNuxtModule<ModuleOptions>({
 
     addPlugin(resolve('./runtime/plugin'))
 
+    addServerPlugin(resolve('./runtime/server/plugins/bugsnag'))
+
+    addImports({
+      name: 'useBugsnag',
+      as: 'useBugsnag',
+      from: resolve('./runtime/composables/useBugsnag')
+    })
+
     extendViteConfig((config) => {
-      config.optimizeDeps?.include?.push(
+      config.optimizeDeps = config.optimizeDeps || {}
+      config.optimizeDeps.include = config.optimizeDeps.include || []
+      config.optimizeDeps.include.push(
         ...['@bugsnag/plugin-vue', '@bugsnag/js']
       )
     })
@@ -78,22 +80,48 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.sourcemap = { server: true, client: true }
 
     nuxt.addHooks({
+      'nitro:config': (config) => {
+        // @ts-ignore
+        config.imports.imports.push({
+          name: 'useBugsnag',
+          as: 'useBugsnag',
+          from: resolve('./runtime/server/composables/useBugsnag')
+        })
+      },
       'nitro:init': (nitro) => {
         nitro.hooks.addHooks({
           compiled: async (nitro) => {
             const logger = nitro.logger.create({})
+
             if (options.disableLog) {
-              logger.pauseLogs()
+              logger.setReporters([
+                {
+                  log: (_) => {}
+                }
+              ])
             }
+
             logger.log('')
             logger.start('upload of sourcemaps to bugsnag \n')
             const promises: Promise<void>[] = []
 
+            console.log(nitro.options.output.serverDir, options.projectRoot, {output: nuxt.options.buildDir})
             promises.push(
               node.uploadMultiple({
                 apiKey: options.config.apiKey!,
                 appVersion: options.config.appVersion,
                 directory: nitro.options.output.serverDir,
+                logger,
+                overwrite: true,
+                projectRoot: options.projectRoot
+              })
+            )
+
+            promises.push(
+              node.uploadMultiple({
+                apiKey: options.config.apiKey!,
+                appVersion: options.config.appVersion,
+                directory: nuxt.options.buildDir,
                 logger,
                 overwrite: true,
                 projectRoot: options.projectRoot

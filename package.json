@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@bugsnag/js": "^7.16.5",
+    "@bugsnag/plugin-express": "^7.19.0",
     "@bugsnag/plugin-vue": "^7.16.5",
     "@bugsnag/source-maps": "^2.3.1",
     "@nuxt/kit": "^3.0.0",
