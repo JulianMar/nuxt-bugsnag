@@ -22,6 +22,7 @@ describe('basic usage', async () => {
 
   it('Renders Hello Nuxt', async () => {
     const result = await $fetch('/')
+    console.log(result)
     expect(result).toContain('apiKey:"317c3d7013a3dc4a9e152138bfe8c900"')
   })
 
