@@ -13,6 +13,10 @@
 
 If you are using Nuxt2 see [here](https://github.com/JulianMar/nuxt-bugsnag/tree/v4.2.2)
 
+## Playground
+
+Open Stackblitz and [try it out](https://stackblitz.com/edit/nuxt-starter-s5gmvk?file=nuxt.config.ts).
+
 
 ## Setup
 
@@ -101,7 +105,7 @@ I would recommend to set these options
     config: {
       apiKey: 'YOUR_API_KEY',
       enabledReleaseStages: ['staging', 'production'],
-      releaseStage: process.env.NODE_ENV
+      releaseStage: process.env.NODE_ENV,
       appVersion: 'YOUR_VERSION',
     }
   }
