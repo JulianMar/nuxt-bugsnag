@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.1.4](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.1.3...v6.1.4) (2023-05-12)
+
+
+### Bug Fixes
+
+* update deps ([e7cbc48](https://github.com/JulianMar/nuxt-bugsnag/commit/e7cbc48b7eef0a81a3d2ba719afa085411004b2c))
+
 ### [6.1.3](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.1.2...v6.1.3) (2023-05-12)
 
 
