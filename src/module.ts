@@ -68,7 +68,7 @@ export default defineNuxtModule<ModuleOptions>({
       config.optimizeDeps = config.optimizeDeps || {}
       config.optimizeDeps.include = config.optimizeDeps.include || []
       config.optimizeDeps.include.push(
-        ...['@bugsnag/plugin-vue', '@bugsnag/js']
+        ...['@bugsnag/plugin-vue', '@bugsnag/js', '@bugsnag/source-maps']
       )
     })
 
