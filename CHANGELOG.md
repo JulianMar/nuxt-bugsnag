@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.2.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.1.7...v6.2.0) (2023-05-12)
+
+
+### Features
+
+* deploy working in webcontainers ([e78a777](https://github.com/JulianMar/nuxt-bugsnag/commit/e78a777829fcc3f6b603941567e73b72036bfd33))
+
 ### [6.1.7](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.1.6...v6.1.7) (2023-05-12)
 
 ### [6.1.6](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.1.5...v6.1.6) (2023-05-12)
