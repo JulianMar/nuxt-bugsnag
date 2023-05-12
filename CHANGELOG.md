@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.1.3](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.1.2...v6.1.3) (2023-05-12)
+
+
+### Bug Fixes
+
+* update back to cjs and try to optimize dep ([19273e6](https://github.com/JulianMar/nuxt-bugsnag/commit/19273e62756d3fd62804d1dc67aed51f29fe4e40))
+
 ### [6.1.2](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.1.1...v6.1.2) (2023-05-11)
 
 
