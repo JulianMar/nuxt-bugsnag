@@ -6,7 +6,7 @@ import {
   addImports,
   addServerPlugin
 } from '@nuxt/kit'
-import { browser, node } from '@bugsnag/source-maps'
+import { browser, node } from 'bugsnag-source-maps-fork'
 import { BrowserConfig } from '@bugsnag/js'
 export interface ModuleOptions {
   disabled: boolean
@@ -68,7 +68,7 @@ export default defineNuxtModule<ModuleOptions>({
       config.optimizeDeps = config.optimizeDeps || {}
       config.optimizeDeps.include = config.optimizeDeps.include || []
       config.optimizeDeps.include.push(
-        ...['@bugsnag/plugin-vue', '@bugsnag/js', '@bugsnag/source-maps']
+        ...['@bugsnag/plugin-vue', '@bugsnag/js', 'bugsnag-source-maps-fork']
       )
     })
 
