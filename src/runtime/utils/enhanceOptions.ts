@@ -6,7 +6,6 @@ export default function enhanceOptions<T extends BrowserConfig | NodeConfig> (mo
 
   options.plugins = [...options.plugins || [], new BugsnagPluginVue()]
   options.onError = (event) => {
-    console.log(event.errors[0].stacktrace)
     event.errors[0].stacktrace = event.errors[0].stacktrace.map((row) => {
       row.file = row.file.replace('file://', '')
       return row
