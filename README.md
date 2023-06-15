@@ -71,7 +71,7 @@ The output for a medium Nuxt App can get quite big. So we added an option to dis
 {
   bugsnag: {
     publishRelease: true,
-    disableLogs: true,
+    disableLog: true,
     baseUrl: 'http://localhost:3000'
   }
 }
