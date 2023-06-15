@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.3.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.2.1...v6.3.0) (2023-06-15)
+
+
+### Features
+
+* update deps to increase speed of sourcemap upload ([3cafb4d](https://github.com/JulianMar/nuxt-bugsnag/commit/3cafb4d482bb16d49597c534e9f676b8f72c2d5d))
+
 ### [6.2.1](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.2.0...v6.2.1) (2023-05-17)
 
 
