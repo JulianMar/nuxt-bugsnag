@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.4.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.3.0...v6.4.0) (2023-06-16)
+
+
+### Features
+
+* add options from public runtimeConfig ([2aca091](https://github.com/JulianMar/nuxt-bugsnag/commit/2aca091e9f36fb3fd98ff9625cca3e8415ca7455))
+
 ## [6.3.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.2.1...v6.3.0) (2023-06-15)
 
 
