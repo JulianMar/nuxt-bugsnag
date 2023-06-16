@@ -12,5 +12,14 @@ export default defineNuxtConfig({
       environment: process.env.NODE_ENV
     },
     projectRoot: path.join(__dirname, '..')
+  },
+  runtimeConfig: {
+    public: {
+      bugsnag: {
+        config: {
+          appVersion: '1.2.0'
+        }
+      }
+    }
   }
 })

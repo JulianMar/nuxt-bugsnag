@@ -5,7 +5,7 @@ import { defineNuxtPlugin, useRuntimeConfig } from '#imports'
 
 export default defineNuxtPlugin((nuxtApp) => {
   const config: RuntimeConfig = useRuntimeConfig()
-  const options = enhanceOptions<BrowserConfig>(config.public.bugsnag)
+  const options = enhanceOptions<BrowserConfig>(config.public.bugsnagModule)
 
   // we check the internal client to prevent the [bugsnag] Bugsnag.start() was called more than once. Ignoring. error
   let client: Client | null = (Bugsnag as any)._client
