@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.5.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.4.0...v6.5.0) (2023-06-16)
+
+
+### Features
+
+* explicitly add defu ([8d7714b](https://github.com/JulianMar/nuxt-bugsnag/commit/8d7714bbbc5904d4b4d30ebd5723c53aa21d36b3))
+
 ## [6.4.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.3.0...v6.4.0) (2023-06-16)
 
 
