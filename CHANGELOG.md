@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.5.2](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.5.1...v6.5.2) (2023-06-16)
+
+
+### Bug Fixes
+
+* use bugsnag options in runtimeconfig ([d086d80](https://github.com/JulianMar/nuxt-bugsnag/commit/d086d80ca0564b22df72fa6ced1ef7f41143b5fd))
+
 ### [6.5.1](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.5.0...v6.5.1) (2023-06-16)
 
 ## [6.5.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.4.0...v6.5.0) (2023-06-16)
