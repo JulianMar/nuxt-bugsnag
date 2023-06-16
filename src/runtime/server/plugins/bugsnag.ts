@@ -7,7 +7,7 @@ import { defineNitroPlugin, useRuntimeConfig } from '#imports'
 
 export default defineNitroPlugin((nitroApp: NitroApp) => {
   const config = useRuntimeConfig()
-  const options = enhanceOptions<NodeConfig>(config.public.bugsnagModule)
+  const options = enhanceOptions<NodeConfig>(config.public.bugsnag)
 
   const client = Bugsnag.start(options)
 

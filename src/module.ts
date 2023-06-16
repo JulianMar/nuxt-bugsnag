@@ -8,7 +8,6 @@ import {
 } from '@nuxt/kit'
 import { browser, node } from 'bugsnag-source-maps-fork'
 import { BrowserConfig } from '@bugsnag/js'
-import { defu } from 'defu'
 export interface ModuleOptions {
   disabled: boolean
   publishRelease: boolean
@@ -48,14 +47,12 @@ export default defineNuxtModule<ModuleOptions>({
     projectRoot: '/'
   },
   setup (options, nuxt) {
-    options = defu(nuxt.options.runtimeConfig.public.bugsnag, options)
-    console.log(options)
     const { resolve } = createResolver(import.meta.url)
     if (options.disabled) {
       return
     }
 
-    nuxt.options.runtimeConfig.public.bugsnagModule = options.config as any
+    nuxt.options.runtimeConfig.public.bugsnag = options.config as any
 
     addPlugin(resolve('./runtime/plugin'))
 
