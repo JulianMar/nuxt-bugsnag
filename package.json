@@ -35,8 +35,9 @@
   "dependencies": {
     "@bugsnag/js": "^7.20.2",
     "@bugsnag/plugin-vue": "^7.19.0",
+    "@nuxt/kit": "^3.4.3",
     "bugsnag-source-maps-fork": "^2.4.0",
-    "@nuxt/kit": "^3.4.3"
+    "defu": "^6.1.2"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.1.1",
