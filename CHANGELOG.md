@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.5.3](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.5.2...v6.5.3) (2023-08-11)
+
+
+### Bug Fixes
+
+* server useBugsnag was not importer ([#54](https://github.com/JulianMar/nuxt-bugsnag/issues/54)) ([67af88d](https://github.com/JulianMar/nuxt-bugsnag/commit/67af88dd5fa57ad51b3086c351217ceb838a1094))
+
 ### [6.5.2](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.5.1...v6.5.2) (2023-06-16)
 
 
