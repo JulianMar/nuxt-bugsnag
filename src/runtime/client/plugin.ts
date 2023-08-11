@@ -1,6 +1,6 @@
 import Bugsnag, { BrowserConfig, Client } from '@bugsnag/js'
 import { RuntimeConfig } from '@nuxt/schema'
-import enhanceOptions from './utils/enhanceOptions'
+import enhanceOptions from '../utils/enhanceOptions'
 import { defineNuxtPlugin, useRuntimeConfig } from '#imports'
 
 export default defineNuxtPlugin((nuxtApp) => {
@@ -11,6 +11,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   let client: Client | null = (Bugsnag as any)._client
   if (client === null) {
     client = Bugsnag.start(options)
+
   }
 
   nuxtApp.vueApp.provide('bugsnag-client', client)

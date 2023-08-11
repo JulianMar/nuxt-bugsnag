@@ -55,15 +55,17 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.runtimeConfig.public.bugsnag = defu(nuxt.options.runtimeConfig.public.bugsnag, options.config) as any
 
-    addPlugin(resolve('./runtime/plugin'))
-
-    addServerPlugin(resolve('./runtime/server/plugins/bugsnag'))
+    // client
+    addPlugin(resolve('./runtime/client/plugin'))
 
     addImports({
       name: 'useBugsnag',
       as: 'useBugsnag',
-      from: resolve('./runtime/composables/useBugsnag')
+      from: resolve('./runtime/client/composables/useBugsnag')
     })
+
+    // server
+    addServerPlugin(resolve('./runtime/server/plugins/bugsnag'))
 
     extendViteConfig((config) => {
       config.optimizeDeps = config.optimizeDeps || {}
@@ -73,6 +75,22 @@ export default defineNuxtModule<ModuleOptions>({
       )
     })
 
+    nuxt.addHooks({
+      'nitro:config': (config) => {
+        if (config.imports === undefined) {
+          config.imports = {
+            imports: []
+          }
+        }
+
+        config.imports.imports.push({
+          name: 'useBugsnag',
+          as: 'useBugsnag',
+          from: resolve('./runtime/server/composables/useBugsnag')
+        })
+      }
+    })
+
     if (!options.publishRelease || nuxt.options.dev) {
       return
     }
@@ -80,14 +98,6 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.sourcemap = { server: true, client: true }
 
     nuxt.addHooks({
-      'nitro:config': (config) => {
-        // @ts-ignore
-        config.imports.imports.push({
-          name: 'useBugsnag',
-          as: 'useBugsnag',
-          from: resolve('./runtime/server/composables/useBugsnag')
-        })
-      },
       'nitro:init': (nitro) => {
         nitro.hooks.addHooks({
           compiled: async (nitro) => {
