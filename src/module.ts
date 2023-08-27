@@ -49,9 +49,10 @@ export default defineNuxtModule<ModuleOptions>({
   },
   setup (options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
-    if (options.disabled) {
-      return
-    }
+    // if (options.disabled || options.config.apiKey === '') {
+    //   console.log('[bugsnag] apiKey not defined or module disabled. Startup interrupted')
+    //   return
+    // }
 
     nuxt.options.runtimeConfig.public.bugsnag = defu(nuxt.options.runtimeConfig.public.bugsnag, options.config) as any
 
@@ -83,6 +84,7 @@ export default defineNuxtModule<ModuleOptions>({
           }
         }
 
+        // @ts-ignore
         config.imports.imports.push({
           name: 'useBugsnag',
           as: 'useBugsnag',
@@ -154,7 +156,7 @@ export default defineNuxtModule<ModuleOptions>({
             logger.success('upload of sourcemaps to bugsnag \n')
           }
         })
-      }
+      },
     })
   }
 })
