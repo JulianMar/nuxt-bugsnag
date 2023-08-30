@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.0.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.5.4...v7.0.0) (2023-08-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* mock module if no api key was provided.
+
+### Features
+
+* mock module if no api key was provided. ([a42ac82](https://github.com/JulianMar/nuxt-bugsnag/commit/a42ac8240bade7de9c5f0972f4b55820d9e0cfba))
+
+
+### Bug Fixes
+
+* readd disable option ([0a7c639](https://github.com/JulianMar/nuxt-bugsnag/commit/0a7c639ea4b5fbe892eabee1f60970d6346adeb2))
+
 ### [6.5.4](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.5.3...v6.5.4) (2023-08-11)
 
 ### [6.5.3](https://github.com/JulianMar/nuxt-bugsnag/compare/v6.5.2...v6.5.3) (2023-08-11)
