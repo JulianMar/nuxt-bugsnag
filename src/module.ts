@@ -7,7 +7,7 @@ import {
   addServerPlugin
 } from '@nuxt/kit'
 import { browser, node } from 'bugsnag-source-maps-fork'
-import { BrowserConfig } from '@bugsnag/js'
+import type { BrowserConfig } from '@bugsnag/js'
 import defu from 'defu'
 export interface ModuleOptions {
   disabled: boolean
