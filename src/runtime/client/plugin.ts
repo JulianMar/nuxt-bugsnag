@@ -20,7 +20,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         provide: {
           bugsnag: mockBugsnag
         }
-      };
+      }
     }
   }
 
