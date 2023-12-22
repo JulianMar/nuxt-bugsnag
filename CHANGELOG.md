@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.2.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v7.1.0...v7.2.0) (2023-12-22)
+
+
+### Features
+
+* make module up to date with newest dependencies ([084cb7c](https://github.com/JulianMar/nuxt-bugsnag/commit/084cb7cc42e5f14c19f5df56e747d2ce2399eea3))
+
+
+### Bug Fixes
+
+* update coverage ([10f300c](https://github.com/JulianMar/nuxt-bugsnag/commit/10f300c32446446d85dd7466db718dd9da67fe37))
+
 ## [7.1.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v7.0.0...v7.1.0) (2023-11-08)
 
 
