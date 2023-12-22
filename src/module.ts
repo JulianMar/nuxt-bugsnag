@@ -47,26 +47,29 @@ export default defineNuxtModule<ModuleOptions>({
     },
     projectRoot: '/'
   },
-  setup (options, nuxt) {
+  setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
     if (options.disabled) {
       console.log('[bugsnag] module disabled. Startup interrupted')
       return
     }
 
-    nuxt.options.runtimeConfig.public.bugsnag = defu(nuxt.options.runtimeConfig.public.bugsnag, options.config) as any
+    nuxt.options.runtimeConfig.public.bugsnag = defu(
+      nuxt.options.runtimeConfig.public.bugsnag,
+      options.config
+    ) as any
 
     // client
-    addPlugin(resolve('./runtime/client/plugin'))
+    addPlugin(resolve('./runtime/client/plugin.ts'))
 
     addImports({
       name: 'useBugsnag',
       as: 'useBugsnag',
-      from: resolve('./runtime/client/composables/useBugsnag')
+      from: resolve('./runtime/client/composables/useBugsnag.ts')
     })
 
     // server
-    addServerPlugin(resolve('./runtime/server/plugins/bugsnag'))
+    addServerPlugin(resolve('./runtime/server/plugins/bugsnag.ts'))
 
     extendViteConfig((config) => {
       config.optimizeDeps = config.optimizeDeps || {}
@@ -88,7 +91,7 @@ export default defineNuxtModule<ModuleOptions>({
         config.imports.imports.push({
           name: 'useBugsnag',
           as: 'useBugsnag',
-          from: resolve('./runtime/server/composables/useBugsnag')
+          from: resolve('./runtime/server/composables/useBugsnag.ts')
         })
       }
     })
@@ -156,7 +159,7 @@ export default defineNuxtModule<ModuleOptions>({
             logger.success('upload of sourcemaps to bugsnag \n')
           }
         })
-      },
+      }
     })
   }
 })

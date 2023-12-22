@@ -1,9 +1,10 @@
 import Bugsnag from '@bugsnag/js'
-import { NodeConfig } from '@bugsnag/node'
-import { NitroApp } from 'nitropack'
-import enhanceOptions from '../../utils/enhanceOptions'
-import { defineNitroPlugin, useRuntimeConfig } from '#imports'
-import mockBugsnag from '../../utils/mockBugsnag'
+import type { NodeConfig } from '@bugsnag/node'
+import type { NitroApp } from 'nitropack'
+import enhanceOptions from '../../utils/enhanceOptions.ts'
+import { defineNitroPlugin } from '#internal/nitro/plugin'
+import { useRuntimeConfig } from '#imports'
+import mockBugsnag from '../../utils/mockBugsnag.ts'
 
 export default defineNitroPlugin((nitroApp: NitroApp) => {
   const config = useRuntimeConfig()

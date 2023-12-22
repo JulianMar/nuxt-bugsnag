@@ -1,9 +1,9 @@
 import Bugsnag, { Client } from '@bugsnag/js'
 import type { BrowserConfig } from '@bugsnag/js'
 import type { RuntimeConfig } from '@nuxt/schema'
-import enhanceOptions from '../utils/enhanceOptions'
+import enhanceOptions from '../utils/enhanceOptions.ts'
 import { defineNuxtPlugin, useRuntimeConfig } from '#imports'
-import mockBugsnag from '../utils/mockBugsnag'
+import mockBugsnag from '../utils/mockBugsnag.ts'
 
 export default defineNuxtPlugin((nuxtApp) => {
   const config: RuntimeConfig = useRuntimeConfig()
