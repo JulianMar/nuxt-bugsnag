@@ -60,16 +60,16 @@ export default defineNuxtModule<ModuleOptions>({
     ) as any
 
     // client
-    addPlugin(resolve('./runtime/client/plugin.ts'))
+    addPlugin(resolve('./runtime/client/plugin'))
 
     addImports({
       name: 'useBugsnag',
       as: 'useBugsnag',
-      from: resolve('./runtime/client/composables/useBugsnag.ts')
+      from: resolve('./runtime/client/composables/useBugsnag')
     })
 
     // server
-    addServerPlugin(resolve('./runtime/server/plugins/bugsnag.ts'))
+    addServerPlugin(resolve('./runtime/server/plugins/bugsnag'))
 
     extendViteConfig((config) => {
       config.optimizeDeps = config.optimizeDeps || {}
@@ -91,7 +91,7 @@ export default defineNuxtModule<ModuleOptions>({
         config.imports.imports.push({
           name: 'useBugsnag',
           as: 'useBugsnag',
-          from: resolve('./runtime/server/composables/useBugsnag.ts')
+          from: resolve('./runtime/server/composables/useBugsnag')
         })
       }
     })
