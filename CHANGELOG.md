@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.2.3](https://github.com/JulianMar/nuxt-bugsnag/compare/v7.2.2...v7.2.3) (2023-12-28)
+
+
+### Bug Fixes
+
+* don't allow import of .ts file ([bbea7b1](https://github.com/JulianMar/nuxt-bugsnag/commit/bbea7b14780c6f52732a02104486bbabc3949bfb))
+
 ### [7.2.2](https://github.com/JulianMar/nuxt-bugsnag/compare/v7.2.1...v7.2.2) (2023-12-28)
 
 
