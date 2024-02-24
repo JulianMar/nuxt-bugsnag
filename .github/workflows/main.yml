@@ -1,25 +1,18 @@
 name: Test Pipeline
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 20
       - run: npm ci
       - run: npm run dev:prepare
       - run: npm run coverage
-      - uses: codecov/codecov-action@v2
+      - uses: codecov/codecov-action@v4
         with:
-          files: ./coverage/coverage-final.json,
+          files: ./coverage/coverage-final.json
