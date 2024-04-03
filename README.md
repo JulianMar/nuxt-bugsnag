@@ -23,7 +23,7 @@ Open Stackblitz and [try it out](https://stackblitz.com/edit/nuxt-starter-s5gmvk
 1. Add `nuxt-bugsnag` dependency to your project
 
 ```bash
-npm install nuxt-bugsnag
+npx nuxi@latest module add bugsnag
 ```
 
 2. Add `nuxt-bugsnag` to the `modules` section of `nuxt.config.js`.
