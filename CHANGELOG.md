@@ -9,6 +9,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 * update deps ([798cd14](https://github.com/JulianMar/nuxt-bugsnag/commit/798cd147292bd5ee8ed96eed13067ae2538c0062))
 
+### Bug Fixes
+* add @bugsnag/plugin-vue and @bugsnag/js as nested instead of root CommonJS depedencies to be optimized ([e35f9f0](https://github.com/JulianMar/nuxt-bugsnag/commit/e35f9f0a41ef6f912cab29c9407332ae9b5af0f2))
+
 ### [7.2.3](https://github.com/JulianMar/nuxt-bugsnag/compare/v7.2.2...v7.2.3) (2023-12-28)
 
 
