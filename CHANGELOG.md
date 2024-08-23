@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.4.0-beta.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v7.3.0...v7.4.0-beta.0) (2024-08-23)
+
+
+### Features
+
+* add performance ([ec89c6c](https://github.com/JulianMar/nuxt-bugsnag/commit/ec89c6c5a3813c2edd83ea19f1ba69b3585a6d85))
+
 ## [7.3.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v7.2.3...v7.3.0) (2024-04-16)
 
 
