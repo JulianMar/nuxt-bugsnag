@@ -1,6 +1,5 @@
-import Bugsnag, { Client } from '@bugsnag/js'
-import type { BrowserConfig } from '@bugsnag/js'
-import type { RuntimeConfig } from '@nuxt/schema'
+import Bugsnag, { Client, type BrowserConfig } from '@bugsnag/js'
+import { type RuntimeConfig } from '@nuxt/schema'
 import enhanceOptions from '../utils/enhanceOptions'
 import { defineNuxtPlugin, useRuntimeConfig } from '#imports'
 import mockBugsnag from '../utils/mockBugsnag'

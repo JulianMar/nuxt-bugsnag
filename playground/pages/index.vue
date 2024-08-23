@@ -9,6 +9,7 @@
     </p>
     <BadButtons />
     <BadButtonsComp />
+    <NuxtLink to="/somepage">Go to some page</NuxtLink>
   </div>
 </template>
 
