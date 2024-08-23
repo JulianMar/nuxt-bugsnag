@@ -124,6 +124,45 @@ if you like the composition approach you can do it like this
 useBugsnag().notify('Some Error')
 ```
 
+## Performance
+
+Only available in 7.4.0 and above
+
+The simplest Configuration for the [bugsnag performance](https://docs.bugsnag.com/performance/integration-guides/web/) feature is like this
+```js
+{
+  bugsnag: {
+    apiKey: 'YOUR API KEY',
+    performance: true
+  }
+}
+```
+
+for custom options you can use the following config and get all the settings from [here](https://docs.bugsnag.com/performance/integration-guides/web/configuration-options/)
+
+```js
+{
+  bugsnag: {
+    apiKey
+    config: {
+      performanceConfig: {
+        autoInstrumentFullPageLoads: true,
+      }
+    }
+  }
+}
+```
+
+### Custom Performance Monitoring
+For sending Custom Spans see [this](https://docs.bugsnag.com/performance/integration-guides/web/#sending-custom-spans) documentation.
+There is a little helper in the module to send custom spans.
+
+> This can only be used on the client side and should never be called on the server side. There is a mock included so you don't need to worry about that, but should be kept in mind.
+
+```js
+useBugsnagPerformance().startSpan('my-span')
+```
+
 ## Development
 
 1. Clone this repository
