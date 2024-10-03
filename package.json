@@ -1,6 +1,6 @@
 {
   "name": "nuxt-bugsnag",
-  "version": "7.4.0-beta.0",
+  "version": "8.0.0",
   "license": "MIT",
   "type": "module",
   "repository": {
@@ -27,7 +27,7 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "standard-version --prerelease beta && git push --follow-tags && npm publish",
+    "release": "standard-version && git push --follow-tags && npm publish",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch",

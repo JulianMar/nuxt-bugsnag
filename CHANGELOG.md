@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v7.4.0-beta.0...v8.0.0) (2024-10-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* update to bugsnag 8.0
+
+### Features
+
+* add documentation ([7b40d06](https://github.com/JulianMar/nuxt-bugsnag/commit/7b40d0663464eef06a8933415113b80dc01b484c))
+* update to bugsnag 8.0 ([46a37c8](https://github.com/JulianMar/nuxt-bugsnag/commit/46a37c8334c24669ff3b47cf0750e664b30044bc))
+
 ## [7.4.0-beta.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v7.3.0...v7.4.0-beta.0) (2024-08-23)
 
 
