@@ -6,7 +6,7 @@ import {
   addImports,
   addServerPlugin
 } from '@nuxt/kit'
-import { browser, node } from 'bugsnag-source-maps-fork'
+import { browser, node } from '@bugsnag/source-maps'
 import { type BrowserConfig } from '@bugsnag/js'
 import defu from 'defu'
 import type { BrowserConfiguration } from '@bugsnag/browser-performance'
