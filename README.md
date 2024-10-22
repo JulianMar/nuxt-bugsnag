@@ -9,10 +9,6 @@
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
-## Nuxt2
-
-If you are using Nuxt2 see [here](https://github.com/JulianMar/nuxt-bugsnag/tree/v4.2.2)
-
 ## Playground
 
 Open Stackblitz and [try it out](https://stackblitz.com/edit/nuxt-starter-s5gmvk?file=nuxt.config.ts).
