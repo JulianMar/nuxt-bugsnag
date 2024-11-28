@@ -77,7 +77,10 @@ export default defineNuxtModule<ModuleOptions>({
       )
     }
     // client
-    addPlugin(resolve('./runtime/client/plugin'))
+    addPlugin({
+      src: resolve('./runtime/client/plugin'),
+      mode: 'client'
+    })
 
     addImports({
       name: 'useBugsnag',
@@ -87,7 +90,10 @@ export default defineNuxtModule<ModuleOptions>({
 
     // performance
     if (options.performance) {
-      addPlugin(resolve('./runtime/client/performance.client'))
+      addPlugin({
+        src: resolve('./runtime/client/performance.client'),
+        mode: 'client'
+      })
     }
 
     // server
