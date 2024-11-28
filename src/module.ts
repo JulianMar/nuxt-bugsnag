@@ -58,29 +58,26 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-  
+
     nuxt.options.runtimeConfig.public.bugsnag = defu(
       nuxt.options.runtimeConfig.public.bugsnag,
       options.config
     )
-    
+
     if (options.performance) {
 
-      
+
       nuxt.options.runtimeConfig.public.bugsnag.performanceConfig = defu(
         {
           apiKey: options.config.apiKey,
-          releaseStage: options.config.environment, 
+          releaseStage: options.config.environment,
         },
         nuxt.options.runtimeConfig.public.bugsnag.performanceConfig,
         options.config.performanceConfig
       )
     }
     // client
-    addPlugin({
-      src: resolve('./runtime/client/plugin'),
-      mode: 'client'
-    })
+    addPlugin(resolve('./runtime/client/plugin'))
 
     addImports({
       name: 'useBugsnag',
@@ -90,10 +87,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     // performance
     if (options.performance) {
-      addPlugin({
-        src: resolve('./runtime/client/performance.client'),
-        mode: 'client'
-      })
+      addPlugin(resolve('./runtime/client/performance.client'))
     }
 
     // server
