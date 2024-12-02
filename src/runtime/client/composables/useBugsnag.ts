@@ -1,9 +1,15 @@
 import { Client } from '@bugsnag/js'
 import { useNuxtApp } from '#imports'
 import BugsnagPerformance from '@bugsnag/browser-performance'
+import mock from '../../utils/mockBugsnag'
 
 export const useBugsnag = () => {
-  return useNuxtApp().$bugsnag as Client
+  try {
+    return useNuxtApp().$bugsnag as Client
+  } catch {
+    console.error('Bugsnag is not available')
+    return mock
+  }
 }
 
 export const useBugsnagPerformance = () => {
