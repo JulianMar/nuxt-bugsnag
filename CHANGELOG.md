@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.1.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.0.0...v8.1.0) (2024-12-02)
+
+
+### Features
+
+* remove ref to nuxt 2 ([682791a](https://github.com/JulianMar/nuxt-bugsnag/commit/682791aeeb43800f558570337427055ba75e562e))
+
+
+### Bug Fixes
+
+* add client plugin only on client ([6bfd051](https://github.com/JulianMar/nuxt-bugsnag/commit/6bfd051936995896c58f81686d3b7d1b2b2f068c))
+* revert and add new testcase ([77625d0](https://github.com/JulianMar/nuxt-bugsnag/commit/77625d0844b7f616ae8e222db034128dd6764706))
+* supress nuxt instance not available error ([2d355e6](https://github.com/JulianMar/nuxt-bugsnag/commit/2d355e6a648eed1312bf5c42775fcc54ab43c4b9))
+
 ## [8.0.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v7.4.0-beta.0...v8.0.0) (2024-10-03)
 
 
