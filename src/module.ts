@@ -4,10 +4,10 @@ import {
   createResolver,
   extendViteConfig,
   addImports,
-  addServerPlugin
+  addServerPlugin,
 } from '@nuxt/kit'
 import { browser, node } from 'bugsnag-source-maps-fork'
-import { type BrowserConfig } from '@bugsnag/js'
+import type { BrowserConfig } from '@bugsnag/js'
 import defu from 'defu'
 import type { BrowserConfiguration } from '@bugsnag/browser-performance'
 
@@ -19,12 +19,12 @@ export interface ModuleOptions {
   projectRoot: string
   performance: boolean
   config: {
-        apiKey: string
-        notifyReleaseStages?: string[]
-        environment?: string
-        appVersion?: string,
-        performanceConfig?: Partial<BrowserConfiguration>,
-    } & Partial<BrowserConfig>
+    apiKey: string
+    notifyReleaseStages?: string[]
+    environment?: string
+    appVersion?: string
+    performanceConfig?: Partial<BrowserConfiguration>
+  } & Partial<BrowserConfig>
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -33,8 +33,8 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'bugsnag',
     compatibility: {
       nuxt: '>=3.0.0 || ^2.16.0',
-      bridge: true
-    }
+      bridge: true,
+    },
   },
   defaults: {
     disabled: false,
@@ -46,10 +46,10 @@ export default defineNuxtModule<ModuleOptions>({
       apiKey: '',
       environment: 'production',
       appVersion: '1.0.0',
-      performanceConfig: {}
+      performanceConfig: {},
     },
     performance: false,
-    projectRoot: '/'
+    projectRoot: '/',
   },
   setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
@@ -58,22 +58,19 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-
     nuxt.options.runtimeConfig.public.bugsnag = defu(
       nuxt.options.runtimeConfig.public.bugsnag,
-      options.config
+      options.config,
     )
 
     if (options.performance) {
-
-
       nuxt.options.runtimeConfig.public.bugsnag.performanceConfig = defu(
         {
           apiKey: options.config.apiKey,
           releaseStage: options.config.environment,
         },
         nuxt.options.runtimeConfig.public.bugsnag.performanceConfig,
-        options.config.performanceConfig
+        options.config.performanceConfig,
       )
     }
     // client
@@ -99,8 +96,10 @@ export default defineNuxtModule<ModuleOptions>({
       config.optimizeDeps.include.push(
         ...[
           'nuxt-bugsnag > @bugsnag/plugin-vue',
-          'nuxt-bugsnag > @bugsnag/js'
-        ]
+          'nuxt-bugsnag > @bugsnag/js',
+          'nuxt-bugsnag > @bugsnag/browser-performance',
+          'nuxt-bugsnag > @bugsnag/vue-router-performance',
+        ],
       )
     })
 
@@ -108,17 +107,17 @@ export default defineNuxtModule<ModuleOptions>({
       'nitro:config': (config) => {
         if (config.imports === undefined) {
           config.imports = {
-            imports: []
+            imports: [],
           }
         }
 
-        // @ts-ignore
+        // @ts-expect-error expect error here because it can be undefined
         config.imports.imports.push({
           name: 'useBugsnag',
           as: 'useBugsnag',
-          from: resolve('./runtime/server/composables/useBugsnag')
+          from: resolve('./runtime/server/composables/useBugsnag'),
         })
-      }
+      },
     })
 
     if (!options.publishRelease || nuxt.options.dev) {
@@ -136,8 +135,8 @@ export default defineNuxtModule<ModuleOptions>({
             if (options.disableLog) {
               logger.setReporters([
                 {
-                  log: () => {}
-                }
+                  log: () => {},
+                },
               ])
             }
 
@@ -145,7 +144,10 @@ export default defineNuxtModule<ModuleOptions>({
             logger.start('upload of sourcemaps to bugsnag \n')
             const promises: Promise<void>[] = []
 
-            console.log('nitro.options.output.serverDir', nitro.options.output.serverDir)
+            console.log(
+              'nitro.options.output.serverDir',
+              nitro.options.output.serverDir,
+            )
             console.log('nuxt.options.buildDir', nuxt.options.buildDir)
 
             promises.push(
@@ -155,8 +157,8 @@ export default defineNuxtModule<ModuleOptions>({
                 directory: nitro.options.output.serverDir,
                 logger,
                 overwrite: true,
-                projectRoot: options.projectRoot
-              })
+                projectRoot: options.projectRoot,
+              }),
             )
 
             promises.push(
@@ -166,8 +168,8 @@ export default defineNuxtModule<ModuleOptions>({
                 directory: nuxt.options.buildDir,
                 logger,
                 overwrite: true,
-                projectRoot: options.projectRoot
-              })
+                projectRoot: options.projectRoot,
+              }),
             )
 
             promises.push(
@@ -177,17 +179,17 @@ export default defineNuxtModule<ModuleOptions>({
                 directory: nitro.options.output.publicDir,
                 logger,
                 overwrite: true,
-                baseUrl: options.baseUrl
-              })
+                baseUrl: options.baseUrl,
+              }),
             )
 
             await Promise.all(promises)
 
             logger.log('')
             logger.success('upload of sourcemaps to bugsnag \n')
-          }
+          },
         })
-      }
+      },
     })
-  }
+  },
 })
