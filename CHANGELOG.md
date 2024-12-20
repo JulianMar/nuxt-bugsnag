@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.3.1](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.3.0...v8.3.1) (2024-12-20)
+
+
+### Bug Fixes
+
+* remove additional performance ref ([f21a1f2](https://github.com/JulianMar/nuxt-bugsnag/commit/f21a1f2aa0a847e4ac66fb1d28d985b8b13c6831))
+
 ## [8.3.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.1.0...v8.3.0) (2024-12-20)
 
 
