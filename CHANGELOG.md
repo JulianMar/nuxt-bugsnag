@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.3.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.1.0...v8.3.0) (2024-12-20)
+
+
+### Features
+
+* disable performance options ([d222977](https://github.com/JulianMar/nuxt-bugsnag/commit/d2229773c247c15ee06ef11fee4cdbe1876b6bf5))
+* update deps and add optimize dep ([9764512](https://github.com/JulianMar/nuxt-bugsnag/commit/9764512b5c351806313866b855cc0f4d88afd60c))
+
 ## [8.2.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.1.0...v8.2.0) (2024-12-20)
 
 
