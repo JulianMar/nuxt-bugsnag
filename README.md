@@ -13,6 +13,8 @@
 
 Open Stackblitz and [try it out](https://stackblitz.com/edit/nuxt-starter-s5gmvk?file=nuxt.config.ts).
 
+### Performance is currently disabled!
+https://github.com/JulianMar/nuxt-bugsnag/issues/80
 
 ## Setup
 
