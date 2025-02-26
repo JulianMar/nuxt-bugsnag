@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.4.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.3.1...v8.4.0) (2025-02-26)
+
+
+### Features
+
+* readd performance option ([45d0f0b](https://github.com/JulianMar/nuxt-bugsnag/commit/45d0f0b46ee8444f69ded468289d24f4746f670a))
+
 ### [8.3.1](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.3.0...v8.3.1) (2024-12-20)
 
 
