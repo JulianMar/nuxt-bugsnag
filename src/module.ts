@@ -9,7 +9,7 @@ import {
 import { browser, node } from 'bugsnag-source-maps-fork'
 import type { BrowserConfig } from '@bugsnag/js'
 import defu from 'defu'
-// import type { BrowserConfiguration } from '@bugsnag/browser-performance'
+import type { BrowserConfiguration } from '@bugsnag/browser-performance'
 
 export interface ModuleOptions {
   disabled: boolean
@@ -17,13 +17,13 @@ export interface ModuleOptions {
   disableLog: boolean
   baseUrl: string
   projectRoot: string
-  // performance: boolean
+  performance: boolean
   config: {
     apiKey: string
     notifyReleaseStages?: string[]
     environment?: string
     appVersion?: string
-    // performanceConfig?: Partial<BrowserConfiguration>
+    performanceConfig?: Partial<BrowserConfiguration>
   } & Partial<BrowserConfig>
 }
 
@@ -46,9 +46,9 @@ export default defineNuxtModule<ModuleOptions>({
       apiKey: '',
       environment: 'production',
       appVersion: '1.0.0',
-      // performanceConfig: {},
+      performanceConfig: {},
     },
-    // performance: false,
+    performance: false,
     projectRoot: '/',
   },
   setup(options, nuxt) {
@@ -63,16 +63,16 @@ export default defineNuxtModule<ModuleOptions>({
       options.config,
     )
 
-    // if (options.performance) {
-    //   nuxt.options.runtimeConfig.public.bugsnag.performanceConfig = defu(
-    //     {
-    //       apiKey: options.config.apiKey,
-    //       releaseStage: options.config.environment,
-    //     },
-    //     nuxt.options.runtimeConfig.public.bugsnag.performanceConfig,
-    //     options.config.performanceConfig,
-    //   )
-    // }
+    if (options.performance) {
+      nuxt.options.runtimeConfig.public.bugsnag.performanceConfig = defu(
+        {
+          apiKey: options.config.apiKey,
+          releaseStage: options.config.environment,
+        },
+        nuxt.options.runtimeConfig.public.bugsnag.performanceConfig,
+        options.config.performanceConfig,
+      )
+    }
 
     // client
     addPlugin(resolve('./runtime/client/plugin'))
@@ -84,9 +84,9 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // performance
-    // if (options.performance) {
-    //   addPlugin(resolve('./runtime/client/performance.client'))
-    // }
+    if (options.performance) {
+      addPlugin(resolve('./runtime/client/performance.client'))
+    }
 
     // server
     addServerPlugin(resolve('./runtime/server/plugins/bugsnag'))
@@ -98,8 +98,8 @@ export default defineNuxtModule<ModuleOptions>({
         ...[
           'nuxt-bugsnag > @bugsnag/plugin-vue',
           'nuxt-bugsnag > @bugsnag/js',
-          // 'nuxt-bugsnag > @bugsnag/browser-performance',
-          // 'nuxt-bugsnag > @bugsnag/vue-router-performance',
+          'nuxt-bugsnag > @bugsnag/browser-performance',
+          'nuxt-bugsnag > @bugsnag/vue-router-performance',
         ],
       )
     })
