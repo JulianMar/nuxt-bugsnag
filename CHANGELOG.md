@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.5.1](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.5.0...v8.5.1) (2025-08-08)
+
+
+### Bug Fixes
+
+* switch onError to be an array of functions instead of overriding it. ([5d79777](https://github.com/JulianMar/nuxt-bugsnag/commit/5d7977716a0aadd9c8e858209a2ac909916a6a72))
+
 ## [8.5.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.4.0...v8.5.0) (2025-08-08)
 
 
