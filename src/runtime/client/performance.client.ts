@@ -1,7 +1,7 @@
-import { type RuntimeConfig } from '@nuxt/schema'
-import { defineNuxtPlugin, useRouter, useRuntimeConfig } from '#imports'
+import type { RuntimeConfig } from '@nuxt/schema'
 import BugsnagPerformance from '@bugsnag/browser-performance'
 import { VueRouterRoutingProvider } from '@bugsnag/vue-router-performance'
+import { defineNuxtPlugin, useRouter, useRuntimeConfig } from '#imports'
 
 export default defineNuxtPlugin((nuxtApp) => {
   const config: RuntimeConfig = useRuntimeConfig()
@@ -17,7 +17,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   return {
     provide: {
-      bugsnagPerformance: client
-    }
+      bugsnagPerformance: client,
+    },
   }
 })

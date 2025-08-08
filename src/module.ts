@@ -32,7 +32,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-bugsnag',
     configKey: 'bugsnag',
     compatibility: {
-      nuxt: '>=3.0.0 || ^2.16.0',
+      nuxt: '>=3.0.0',
       bridge: true,
     },
   },
@@ -80,7 +80,7 @@ export default defineNuxtModule<ModuleOptions>({
     addImports({
       name: 'useBugsnag',
       as: 'useBugsnag',
-      from: resolve('./runtime/client/composables/useBugsnag')
+      from: resolve('./runtime/client/composables/useBugsnag'),
     })
 
     // performance

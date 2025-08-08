@@ -1,7 +1,8 @@
 import type { BrowserConfig } from '@bugsnag/js'
 import type { NodeConfig } from '@bugsnag/node'
 import BugsnagPluginVue from '@bugsnag/plugin-vue'
-export default function enhanceOptions<T extends BrowserConfig | NodeConfig> (moduleOptions: any): T {
+
+export default function enhanceOptions<T extends BrowserConfig | NodeConfig>(moduleOptions: any): T {
   const options: T = { ...moduleOptions }
 
   options.plugins = [...options.plugins || [], new BugsnagPluginVue()]
