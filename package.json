@@ -40,10 +40,10 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@bugsnag/browser-performance": "^2.11.0",
+    "@bugsnag/browser-performance": "^3.0.0",
     "@bugsnag/js": "^8.0.0",
     "@bugsnag/plugin-vue": "^8.0.0",
-    "@bugsnag/vue-router-performance": "^2.8.0",
+    "@bugsnag/vue-router-performance": "^3.0.0",
     "@nuxt/kit": "^3.4.3",
     "bugsnag-source-maps-fork": "^2.4.0",
     "defu": "^6.1.2"
@@ -60,6 +60,6 @@
     "nuxt": "^3.1.0",
     "standard-version": "^9.5.0",
     "vitest": "^3.0.0",
-    "vue-tsc": "^2.0.29"
+    "vue-tsc": "^3.0.0"
   }
 }

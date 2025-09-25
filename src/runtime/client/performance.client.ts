@@ -11,7 +11,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   options.performanceConfig.routingProvider = new VueRouterRoutingProvider(router)
 
-  const client = BugsnagPerformance.start(options)
+  const client = BugsnagPerformance.start(options.performanceConfig)
 
   nuxtApp.vueApp.provide('bugsnag-performance', client)
 
