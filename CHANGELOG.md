@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.7.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.6.0...v8.7.0) (2025-11-13)
+
+
+### Features
+
+* update major dependencies ([3ed89ce](https://github.com/JulianMar/nuxt-bugsnag/commit/3ed89cea5ed11a45ae17e4c67b0286a5f700a469))
+
 ## [8.6.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.5.1...v8.6.0) (2025-09-25)
 
 
