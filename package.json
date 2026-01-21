@@ -43,7 +43,6 @@
     "@bugsnag/browser-performance": "^3.0.0",
     "@bugsnag/js": "^8.0.0",
     "@bugsnag/plugin-vue": "^8.0.0",
-    "@bugsnag/vite-plugin-bugsnag": "^1.1.0",
     "@bugsnag/vue-router-performance": "^3.0.0",
     "@nuxt/kit": "^4.0.0",
     "bugsnag-source-maps-fork": "^3.0.0",

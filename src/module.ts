@@ -33,8 +33,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-bugsnag',
     configKey: 'bugsnag',
     compatibility: {
-      nuxt: '>=3.0.0',
-      bridge: true,
+      nuxt: '>=4.0.0',
     },
   },
   defaults: {
