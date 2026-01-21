@@ -161,12 +161,6 @@ export default defineNuxtModule<ModuleOptions>({
             logger.start('upload of sourcemaps to bugsnag \n')
             const promises: Promise<void>[] = []
 
-            console.log(
-              'nitro.options.output.serverDir',
-              nitro.options.output.serverDir,
-            )
-            console.log('nuxt.options.buildDir', nuxt.options.buildDir)
-
             promises.push(
               node.uploadMultiple({
                 apiKey: options.config.apiKey!,
