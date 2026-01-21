@@ -1,41 +1,34 @@
-import type { Client, BrowserConfig } from '@bugsnag/js'
-import Bugsnag from '@bugsnag/js'
+import type { BrowserConfig } from '@bugsnag/js'
 import type { RuntimeConfig } from '@nuxt/schema'
 import enhanceOptions from '../utils/enhanceOptions'
-import mockBugsnag from '../utils/mockBugsnag'
+import { startBugsnag } from './services/bugsnag'
+import {
+  deferStart,
+  storedBugsnagOptions,
+  storedPerformanceOptions,
+} from './state'
 import { defineNuxtPlugin, useRuntimeConfig } from '#imports'
 
 export default defineNuxtPlugin((nuxtApp) => {
   const config: RuntimeConfig = useRuntimeConfig()
   const options = enhanceOptions<BrowserConfig>(config.public.bugsnag)
+  const isDeferStart = config.public.bugsnag.deferStart ?? false
 
-  // we check the internal client to prevent the [bugsnag] Bugsnag.start() was called more than once. Ignoring. error
-  let client: Client = Bugsnag
-  if (!Bugsnag.isStarted()) {
-    try {
-      client = Bugsnag.start(options)
-    }
-    catch (_error) {
-      console.log('[Bugsnag] started in mock mode')
-      return {
-        provide: {
-          bugsnag: mockBugsnag,
-        },
-      }
-    }
+  // Store options and state for potential deferred initialization
+  storedBugsnagOptions.value = options
+  deferStart.value = isDeferStart
+
+  // Store performance options if configured
+  if (config.public.bugsnag.performanceConfig) {
+    storedPerformanceOptions.value = config.public.bugsnag.performanceConfig
   }
 
-  nuxtApp.vueApp.provide('bugsnag-client', client)
-
-  const plugin = Bugsnag.getPlugin('vue')
-
-  if (plugin !== undefined) {
-    nuxtApp.vueApp.use(plugin)
+  // If deferStart is enabled, wait for user to call initBugsnag()
+  if (deferStart.value && import.meta.client) {
+    console.log('[Bugsnag] Deferred start enabled - call initBugsnag() after user consent')
+    return
   }
 
-  return {
-    provide: {
-      bugsnag: client,
-    },
-  }
+  // Immediate initialization (default behavior)
+  startBugsnag(options, nuxtApp)
 })

@@ -47,7 +47,7 @@ export default {
       try {
         throw new Error('Catch me if you can')
       } catch (e) {
-        this.$bugsnag.notify(e)
+        useBugsnag().notify(e)
       }
     },
     // Throws an error outside in a timer which will be reported by the bugsnagClient

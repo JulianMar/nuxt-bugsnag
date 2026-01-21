@@ -1,32 +1,15 @@
 import type { Client } from '@bugsnag/js'
-import BugsnagPerformance from '@bugsnag/browser-performance'
-import mock from '../../utils/mockBugsnag'
-import { useNuxtApp } from '#imports'
+import type BugsnagPerformance from '@bugsnag/browser-performance'
+import { bugsnagClient, performanceClient } from '../state'
 
-export const useBugsnag = () => {
-  try {
-    return useNuxtApp().$bugsnag as Client
-  }
-  catch {
-    console.error('Bugsnag is not available')
-    return mock
-  }
+export const useBugsnag = (): Client => {
+  return bugsnagClient.value
 }
 
-export const useBugsnagPerformance = () => {
+export const useBugsnagPerformance = (): typeof BugsnagPerformance | null => {
   if (!import.meta.client) {
-    console.log('Bugsnag Performance should only be called on the client side - mock mode')
-    return {
-      startNetworkSpan: () => {
-        console.log('start Network Span')
-        return ({ end: () => console.log('end Network Span') })
-      },
-      startSpan: () => {
-        console.log('start Span')
-        return ({ end: () => console.log('end Span') })
-      },
-    }
+    console.warn('[Bugsnag] Performance should only be called on the client side')
+    return null
   }
-
-  return BugsnagPerformance
+  return performanceClient.value
 }

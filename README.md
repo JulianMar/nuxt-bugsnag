@@ -109,14 +109,10 @@ I would recommend to set these options
 
 ## Reporting custom errors
 
-The simplest answer is like this.
-```
-this.$bugsnag.notify(new Error('Some Error'))
-```
+Use the `useBugsnag()` composable to report errors:
 
-if you like the composition approach you can do it like this
-```
-useBugsnag().notify('Some Error')
+```js
+useBugsnag().notify(new Error('Some Error'))
 ```
 
 ## Performance
@@ -157,6 +153,84 @@ There is a little helper in the module to send custom spans.
 ```js
 useBugsnagPerformance().startSpan('my-span')
 ```
+
+## GDPR Compliance (Deferred Initialization)
+
+For GDPR compliance, you can defer Bugsnag initialization until user consent is obtained using the `deferStart` option.
+
+### Configuration
+
+```js
+{
+  bugsnag: {
+    deferStart: true,
+    config: {
+      apiKey: 'YOUR_API_KEY',
+    }
+  }
+}
+```
+
+### Usage
+
+When `deferStart: true`, Bugsnag will not initialize automatically. Instead:
+
+1. `useBugsnag()` returns a mock client that logs errors to console
+2. Call `initBugsnag()` after obtaining user consent to start the real Bugsnag client
+3. After initialization, `useBugsnag()` returns the real client
+
+```vue
+<script setup>
+const hasConsent = ref(false)
+
+function onConsentGiven() {
+  hasConsent.value = true
+  initBugsnag()
+}
+
+// Safe to call anytime - logs to console before consent
+function reportError() {
+  useBugsnag().notify(new Error('Something went wrong'))
+}
+</script>
+
+<template>
+  <button v-if="!hasConsent" @click="onConsentGiven">
+    Accept Cookies
+  </button>
+  <button @click="reportError">
+    Report Error
+  </button>
+</template>
+```
+
+> **Note:** Before consent is given, errors are logged to the browser console instead of being sent to Bugsnag.
+
+## Migration from v8.x
+
+### Breaking Changes in v9.0
+
+1. **`$bugsnag` removed** - Use the `useBugsnag()` composable instead
+
+   ```js
+   // Before (v8.x)
+   this.$bugsnag.notify(new Error('Some Error'))
+   
+   // After (v9.0)
+   useBugsnag().notify(new Error('Some Error'))
+   ```
+
+2. **`$bugsnagPerformance` removed** - Use `useBugsnagPerformance()` composable instead
+
+   ```js
+   // Before (v8.x)
+   this.$bugsnagPerformance.startSpan('my-span')
+   
+   // After (v9.0)
+   useBugsnagPerformance().startSpan('my-span')
+   ```
+
+3. **Mock behavior changed** - The mock client now logs errors to console instead of throwing. This makes it safe to call `useBugsnag()` before initialization when using `deferStart: true`.
 
 ## Development
 

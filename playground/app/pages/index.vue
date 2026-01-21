@@ -9,6 +9,7 @@
     </p>
     <BadButtons />
     <BadButtonsComp />
+    <DeferStart />
     <NuxtLink to="/somepage">Go to some page</NuxtLink>
     <NuxtLink to="/asyncFetch">Go to some async fetch page</NuxtLink>
   </div>

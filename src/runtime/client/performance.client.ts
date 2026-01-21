@@ -1,23 +1,18 @@
 import type { RuntimeConfig } from '@nuxt/schema'
-import BugsnagPerformance from '@bugsnag/browser-performance'
-import { VueRouterRoutingProvider } from '@bugsnag/vue-router-performance'
+import { startPerformance } from './services/performance'
 import { defineNuxtPlugin, useRouter, useRuntimeConfig } from '#imports'
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
   const config: RuntimeConfig = useRuntimeConfig()
   const options = config.public.bugsnag
+  const isDeferStart = options.deferStart ?? false
 
-  const router = useRouter()
-
-  options.performanceConfig.routingProvider = new VueRouterRoutingProvider(router)
-
-  const client = BugsnagPerformance.start(options.performanceConfig)
-
-  nuxtApp.vueApp.provide('bugsnag-performance', client)
-
-  return {
-    provide: {
-      bugsnagPerformance: client,
-    },
+  // If deferStart is enabled, performance will be started by initBugsnag()
+  if (isDeferStart) {
+    return
   }
+
+  // Immediate initialization
+  const router = useRouter()
+  startPerformance(options.performanceConfig, router)
 })

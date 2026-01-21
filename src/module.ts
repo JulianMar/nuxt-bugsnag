@@ -18,6 +18,7 @@ export interface ModuleOptions {
   baseUrl: string
   projectRoot: string
   performance: boolean
+  deferStart: boolean
   config: {
     apiKey: string
     notifyReleaseStages?: string[]
@@ -49,6 +50,7 @@ export default defineNuxtModule<ModuleOptions>({
       performanceConfig: {},
     },
     performance: false,
+    deferStart: false,
     projectRoot: '/',
   },
   setup(options, nuxt) {
@@ -60,7 +62,10 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.runtimeConfig.public.bugsnag = defu(
       nuxt.options.runtimeConfig.public.bugsnag,
-      options.config,
+      {
+        ...options.config,
+        deferStart: options.deferStart,
+      },
     )
 
     if (options.performance) {
@@ -80,6 +85,18 @@ export default defineNuxtModule<ModuleOptions>({
     addImports({
       name: 'useBugsnag',
       as: 'useBugsnag',
+      from: resolve('./runtime/client/composables/useBugsnag'),
+    })
+
+    addImports({
+      name: 'initBugsnag',
+      as: 'initBugsnag',
+      from: resolve('./runtime/client/composables/initBugsnag'),
+    })
+
+    addImports({
+      name: 'useBugsnagPerformance',
+      as: 'useBugsnagPerformance',
       from: resolve('./runtime/client/composables/useBugsnag'),
     })
 
