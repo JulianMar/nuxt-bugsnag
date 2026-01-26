@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [9.0.0-beta.1](https://github.com/JulianMar/nuxt-bugsnag/compare/v9.0.0-beta.0...v9.0.0-beta.1) (2026-01-26)
+
+
+### Features
+
+* add prerelease command ([f699515](https://github.com/JulianMar/nuxt-bugsnag/commit/f699515de8e61a5fffbdb9ab4bf67e33285f1fcc))
+
+
+### Bug Fixes
+
+* don't store performance options if empty object ([fab1507](https://github.com/JulianMar/nuxt-bugsnag/commit/fab15071badcf04ee3a6c05a12ce3e596047ecae))
+
 ## [9.0.0-beta.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.7.0...v9.0.0-beta.0) (2026-01-26)
 
 
