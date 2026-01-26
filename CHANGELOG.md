@@ -1,6 +1,26 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [9.0.0-beta.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.7.0...v9.0.0-beta.0) (2026-01-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop support for nuxt 3
+
+### Features
+
+* add GDPR-compliant deferred Bugsnag initialization ([d7db08f](https://github.com/JulianMar/nuxt-bugsnag/commit/d7db08fb28c57f93a12aca2cc0db1945e2eb6527))
+* drop support for nuxt 3 ([75869ad](https://github.com/JulianMar/nuxt-bugsnag/commit/75869adea8d3846827b3791c0a8cda5e7c7d7993))
+* switch from standard-version to fork ([d0c7004](https://github.com/JulianMar/nuxt-bugsnag/commit/d0c70040fc2e3b20ea8548943dd8647be427e198))
+* update to nuxt 4 ([108fcdb](https://github.com/JulianMar/nuxt-bugsnag/commit/108fcdb006e930c42942e623c4a8ffc2ac12fe5a))
+
+
+### Bug Fixes
+
+* deps ([518225d](https://github.com/JulianMar/nuxt-bugsnag/commit/518225d42b18649bae163a83bb4397841db547d5))
+* remove debug logging ([fac0bd1](https://github.com/JulianMar/nuxt-bugsnag/commit/fac0bd15dbeeb18cadcc6f495dc8630b3a071e4f))
 
 ## [8.7.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.6.0...v8.7.0) (2025-11-13)
 
