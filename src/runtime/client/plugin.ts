@@ -19,7 +19,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   deferStart.value = isDeferStart
 
   // Store performance options if configured
-  if (config.public.bugsnag.performanceConfig) {
+  if (config.public.bugsnag.performanceConfig.apiKey) {
     storedPerformanceOptions.value = config.public.bugsnag.performanceConfig
   }
 
