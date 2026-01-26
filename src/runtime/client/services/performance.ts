@@ -9,8 +9,12 @@ export function startPerformance(options: any, router: Router): typeof BugsnagPe
     routingProvider: new VueRouterRoutingProvider(router),
   }
 
-  BugsnagPerformance.start(performanceOptions)
-  performanceClient.value = BugsnagPerformance
+  try {
+    BugsnagPerformance.start(performanceOptions)
+    performanceClient.value = BugsnagPerformance
+  } catch (error) {
+    console.warn('[Bugsnag] Failed to start Performance monitoring:', error)
+  }
 
   return BugsnagPerformance
 }

@@ -25,7 +25,6 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   // If deferStart is enabled, wait for user to call initBugsnag()
   if (deferStart.value && import.meta.client) {
-    console.log('[Bugsnag] Deferred start enabled - call initBugsnag() after user consent')
     return
   }
 
