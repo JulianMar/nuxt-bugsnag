@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [9.0.0-beta.2](https://github.com/JulianMar/nuxt-bugsnag/compare/v9.0.0-beta.1...v9.0.0-beta.2) (2026-01-26)
+
+
+### Bug Fixes
+
+* disable logs ([008732e](https://github.com/JulianMar/nuxt-bugsnag/commit/008732e6fef6911f18e7f80912c4b0e9cf3c41fe))
+
 ## [9.0.0-beta.1](https://github.com/JulianMar/nuxt-bugsnag/compare/v9.0.0-beta.0...v9.0.0-beta.1) (2026-01-26)
 
 
