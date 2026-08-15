@@ -26,7 +26,8 @@ export function startBugsnag(options: BrowserConfig, nuxtApp: NuxtAppLike): Clie
     }
 
     return client
-  } catch (error) {
+  }
+  catch (error) {
     console.warn('[Bugsnag] Failed to start:', error)
     return mockBugsnag
   }

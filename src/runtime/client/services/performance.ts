@@ -1,9 +1,9 @@
 import type { Router } from 'vue-router'
-import BugsnagPerformance from '@bugsnag/browser-performance'
+import BugsnagPerformance, { type BrowserConfiguration } from '@bugsnag/browser-performance'
 import { VueRouterRoutingProvider } from '@bugsnag/vue-router-performance'
 import { performanceClient } from '../state'
 
-export function startPerformance(options: any, router: Router): typeof BugsnagPerformance {
+export function startPerformance(options: BrowserConfiguration, router: Router): typeof BugsnagPerformance {
   const performanceOptions = {
     ...options,
     routingProvider: new VueRouterRoutingProvider(router),
@@ -12,7 +12,8 @@ export function startPerformance(options: any, router: Router): typeof BugsnagPe
   try {
     BugsnagPerformance.start(performanceOptions)
     performanceClient.value = BugsnagPerformance
-  } catch (error) {
+  }
+  catch (error) {
     console.warn('[Bugsnag] Failed to start Performance monitoring:', error)
   }
 

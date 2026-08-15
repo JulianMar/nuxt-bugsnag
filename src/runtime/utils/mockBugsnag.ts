@@ -1,6 +1,7 @@
 import type { Client } from '@bugsnag/js'
 
 const mockBugsnag = {
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   notify: (error: any) => {
     console.warn('[Bugsnag] Error logged (not initialized):', error)
   },
@@ -13,6 +14,7 @@ const mockBugsnag = {
   setContext: (context: string) => {
     console.log('[Bugsnag] setContext:', context)
   },
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   addMetadata: (section: string, values: Record<string, any>) => {
     console.log('[Bugsnag] addMetadata:', section, values)
   },

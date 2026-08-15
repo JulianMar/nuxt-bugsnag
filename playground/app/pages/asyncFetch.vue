@@ -1,6 +1,6 @@
 <template>
-    <div>Some Page</div>
-    <NuxtLink to="/">Go to index page</NuxtLink>
+  <div>Some Page</div>
+  <NuxtLink to="/">Go to index page</NuxtLink>
 </template>
 
 <script setup>

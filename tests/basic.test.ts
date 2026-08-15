@@ -8,7 +8,7 @@ describe('basic usage', async () => {
   await setup({
     rootDir: fileURLToPath(new URL('../playground', import.meta.url)),
     server: true,
-    build: true
+    build: true,
   })
 
   it('Renders Hello Nuxt', async () => {
@@ -36,7 +36,11 @@ describe('basic usage', async () => {
   it('map is generated', async () => {
     await reloadWithNewFixture('./fixtures/buildupload')
 
-    const p = useTestContext().nuxt?.options.buildDir!
+    const p = useTestContext().nuxt?.options.buildDir
+
+    if (!p) {
+      throw new Error('Build dir not found')
+    }
 
     const res = fs.readdirSync(path.join(p, 'output', 'server'))
 
@@ -50,7 +54,7 @@ const reloadWithNewFixture = async (path: string) => {
   await setup({
     rootDir: fileURLToPath(new URL(path, import.meta.url)),
     server: true,
-    build: true
+    build: true,
   })
 
   await loadFixture()

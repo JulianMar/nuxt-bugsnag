@@ -34,7 +34,7 @@ export default {
   watch: {
     doAWatchError(val) {
       if (val) {
-        throw new Error("Bad thing!");
+        throw new Error('Bad thing!')
       }
     },
   },
@@ -42,37 +42,38 @@ export default {
     // Tell the bugsnagClient about an error that was handled
     sendHandled() {
       try {
-        throw new Error("Catch me if you can");
-      } catch (e) {
-        useBugsnag().notify(e);
+        throw new Error('Catch me if you can')
+      }
+      catch (e) {
+        useBugsnag().notify(e)
       }
     },
     // Throws an error outside in a timer which will be reported by the bugsnagClient
     sendUnhandled() {
       setTimeout(() => {
-        throw new Error("Crashy");
-      });
+        throw new Error('Crashy')
+      })
     },
     // Sets the data in such a way that the next render of the component will throw an error
     toggleOk() {
-      this.ok = !this.ok;
+      this.ok = !this.ok
     },
     // Throws an error using Vue.js's nextTick() function
     triggerNextTickError() {
       this.$nextTick(function () {
-        JSON.parse("definitely not json");
-      });
+        JSON.parse('definitely not json')
+      })
     },
     // Changes the value being watched such that it throws an error
     triggerWatchError() {
-      this.doAWatchError = true;
+      this.doAWatchError = true
       setTimeout(
         function () {
-          this.doAWatchError = false;
+          this.doAWatchError = false
         }.bind(this),
-        100
-      );
+        100,
+      )
     },
   },
-};
+}
 </script>

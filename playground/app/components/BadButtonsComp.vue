@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-const triggerComposable = () => useBugsnag().notify("using composable");
+const triggerComposable = () => useBugsnag().notify('using composable')
 
-const triggerInComposable = () => useComp();
+const triggerInComposable = () => useComp()
 </script>

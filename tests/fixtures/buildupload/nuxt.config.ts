@@ -2,7 +2,7 @@ import MyModule from '../../..'
 
 export default defineNuxtConfig({
   modules: [
-    MyModule
+    MyModule,
   ],
   bugsnag: {
     disabled: false,
@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     config: {
       notifyReleaseStages: ['staging', 'production', 'dev'],
       apiKey: '317c3d7013a3dc4a9e152138bfe8c900',
-      environment: process.env.NODE_ENV
-    }
-  }
+      environment: process.env.NODE_ENV,
+    },
+  },
 })

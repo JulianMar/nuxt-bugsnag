@@ -2,6 +2,7 @@ import type { Client, BrowserConfig } from '@bugsnag/js'
 import type BugsnagPerformanceType from '@bugsnag/browser-performance'
 import { shallowRef } from 'vue'
 import mockBugsnag from '../utils/mockBugsnag'
+import type { BrowserConfiguration } from '@bugsnag/browser-performance'
 
 // Client instances
 export const bugsnagClient = shallowRef<Client>(mockBugsnag)
@@ -13,4 +14,4 @@ export const deferStart = shallowRef(false)
 
 // Stored configuration for deferred init
 export const storedBugsnagOptions = shallowRef<BrowserConfig | null>(null)
-export const storedPerformanceOptions = shallowRef<any>(null)
+export const storedPerformanceOptions = shallowRef<BrowserConfiguration | null>(null)

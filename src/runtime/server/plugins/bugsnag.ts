@@ -15,7 +15,7 @@ export default defineNitroPlugin((nitroApp: NitroApp) => {
     // @ts-expect-error NitroApp does not have $bugsnag by default
     nitroApp.$bugsnag = client
   }
-  catch (error) {
+  catch {
     console.log('Bugsnag set to mock mode')
 
     // @ts-expect-error NitroApp does not have $bugsnag by default

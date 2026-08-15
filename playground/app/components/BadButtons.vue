@@ -32,21 +32,22 @@ export default {
   data: () => ({
     ok: true,
     list: [],
-    doAWatchError: false
+    doAWatchError: false,
   }),
   watch: {
     doAWatchError(val) {
       if (val) {
         throw new Error('Bad thing!')
       }
-    }
+    },
   },
   methods: {
     // Tell the bugsnagClient about an error that was handled
     sendHandled() {
       try {
         throw new Error('Catch me if you can')
-      } catch (e) {
+      }
+      catch (e) {
         useBugsnag().notify(e)
       }
     },
@@ -73,14 +74,14 @@ export default {
         function () {
           this.doAWatchError = false
         }.bind(this),
-        100
+        100,
       )
     },
     triggerErrorOnServer() {
       $fetch('api/error')
-        .then((res) => res.json())
-        .then((res) => console.log(res))
-    }
-  }
+        .then(res => res.json())
+        .then(res => console.log(res))
+    },
+  },
 }
 </script>

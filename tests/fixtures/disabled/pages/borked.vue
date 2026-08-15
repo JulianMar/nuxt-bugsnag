@@ -3,5 +3,5 @@
 </template>
 
 <script setup>
-throw new Error("borked");
+throw new Error('borked')
 </script>
