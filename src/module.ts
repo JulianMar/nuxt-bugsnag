@@ -144,18 +144,20 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.sourcemap = { server: 'hidden', client: 'hidden' }
 
+    const logger = options.disableLog ? { debug: () => {}, info: () => {}, warn: () => {}, error: () => {} } : undefined
+
     addVitePlugin(BugsnagSourceMapUploaderPlugin({
       apiKey: options.config.apiKey,
       appVersion: options.config.appVersion,
       overwrite: true,
-      logger: options.disableLog ? { debug: () => {}, info: () => {}, warn: () => {}, error: () => {} } : undefined,
+      logger,
     }), { client: true })
 
     addVitePlugin(BugsnagSourceMapUploaderPlugin({
       apiKey: options.config.apiKey,
       appVersion: options.config.appVersion,
       overwrite: true,
-      logger: options.disableLog ? { debug: () => {}, info: () => {}, warn: () => {}, error: () => {} } : undefined,
+      logger,
       projectRoot: options.projectRoot,
     }), { server: true })
   },
