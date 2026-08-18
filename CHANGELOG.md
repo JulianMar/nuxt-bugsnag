@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [9.0.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v8.7.0...v9.0.0) (2026-08-18)
+
+### ⚠ BREAKING CHANGES
+
+* drop support for nuxt 3
+
+### Features
+
+* add GDPR-compliant deferred Bugsnag initialization ([d7db08f](https://github.com/JulianMar/nuxt-bugsnag/commit/d7db08fb28c57f93a12aca2cc0db1945e2eb6527))
+* add prerelease command ([f699515](https://github.com/JulianMar/nuxt-bugsnag/commit/f699515de8e61a5fffbdb9ab4bf67e33285f1fcc))
+* define logger once ([f07a2f5](https://github.com/JulianMar/nuxt-bugsnag/commit/f07a2f51eb83bcbe05516a54132297c5f74e5a92))
+* drop support for nuxt 3 ([75869ad](https://github.com/JulianMar/nuxt-bugsnag/commit/75869adea8d3846827b3791c0a8cda5e7c7d7993))
+* migrate to vite plugin for sourcemap upload ([b21ac8f](https://github.com/JulianMar/nuxt-bugsnag/commit/b21ac8f88d74392f9f20a89162811f34b3cda098))
+* switch from standard-version to fork ([d0c7004](https://github.com/JulianMar/nuxt-bugsnag/commit/d0c70040fc2e3b20ea8548943dd8647be427e198))
+* update actions ([d079754](https://github.com/JulianMar/nuxt-bugsnag/commit/d0797549e79f9a6f65ef0f2051c90c9497f45e49))
+* update all major dependencies ([5a3a111](https://github.com/JulianMar/nuxt-bugsnag/commit/5a3a1119373871ab871ffb8d9f3fa8d6049727f0))
+* update to nuxt 4 ([108fcdb](https://github.com/JulianMar/nuxt-bugsnag/commit/108fcdb006e930c42942e623c4a8ffc2ac12fe5a))
+
+### Bug Fixes
+
+* deps ([518225d](https://github.com/JulianMar/nuxt-bugsnag/commit/518225d42b18649bae163a83bb4397841db547d5))
+* disable logs ([008732e](https://github.com/JulianMar/nuxt-bugsnag/commit/008732e6fef6911f18e7f80912c4b0e9cf3c41fe))
+* don't store performance options if empty object ([fab1507](https://github.com/JulianMar/nuxt-bugsnag/commit/fab15071badcf04ee3a6c05a12ce3e596047ecae))
+* linting ([eddc704](https://github.com/JulianMar/nuxt-bugsnag/commit/eddc7043efeb627da6bcb60ffb3cbb19dba215b5))
+* npm version issue ([62c83fe](https://github.com/JulianMar/nuxt-bugsnag/commit/62c83fe0d090fefb5c947b202e7f945ffc8737e5))
+* remove debug logging ([fac0bd1](https://github.com/JulianMar/nuxt-bugsnag/commit/fac0bd15dbeeb18cadcc6f495dc8630b3a071e4f))
 ## [9.0.0-beta.2](https://github.com/JulianMar/nuxt-bugsnag/compare/v9.0.0-beta.1...v9.0.0-beta.2) (2026-01-26)
 
 
