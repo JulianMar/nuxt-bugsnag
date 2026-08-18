@@ -5,9 +5,10 @@ import {
   extendViteConfig,
   addImports,
   addServerPlugin,
+  addVitePlugin,
 } from '@nuxt/kit'
-import { browser, node } from 'bugsnag-source-maps-fork'
 import type { BrowserConfig } from '@bugsnag/js'
+import { BugsnagSourceMapUploaderPlugin } from '@bugsnag/vite-plugin-bugsnag'
 import defu from 'defu'
 import type { BrowserConfiguration } from '@bugsnag/browser-performance'
 
@@ -141,66 +142,21 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    nuxt.options.sourcemap = { server: true, client: true }
+    nuxt.options.sourcemap = { server: 'hidden', client: 'hidden' }
 
-    nuxt.addHooks({
-      'nitro:init': (nitro) => {
-        nitro.hooks.addHooks({
-          compiled: async (nitro) => {
-            const logger = nitro.logger.create({})
+    addVitePlugin(BugsnagSourceMapUploaderPlugin({
+      apiKey: options.config.apiKey,
+      appVersion: options.config.appVersion,
+      overwrite: true,
+      logger: options.disableLog ? { debug: () => {}, info: () => {}, warn: () => {}, error: () => {} } : undefined,
+    }), { client: true })
 
-            if (options.disableLog) {
-              logger.setReporters([
-                {
-                  log: () => {},
-                },
-              ])
-            }
-
-            logger.log('')
-            logger.start('upload of sourcemaps to bugsnag \n')
-            const promises: Promise<void>[] = []
-
-            promises.push(
-              node.uploadMultiple({
-                apiKey: options.config.apiKey!,
-                appVersion: options.config.appVersion,
-                directory: nitro.options.output.serverDir,
-                logger,
-                overwrite: true,
-                projectRoot: options.projectRoot,
-              }),
-            )
-
-            promises.push(
-              node.uploadMultiple({
-                apiKey: options.config.apiKey!,
-                appVersion: options.config.appVersion,
-                directory: nuxt.options.buildDir,
-                logger,
-                overwrite: true,
-                projectRoot: options.projectRoot,
-              }),
-            )
-
-            promises.push(
-              browser.uploadMultiple({
-                apiKey: options.config.apiKey!,
-                appVersion: options.config.appVersion,
-                directory: nitro.options.output.publicDir,
-                logger,
-                overwrite: true,
-                baseUrl: options.baseUrl,
-              }),
-            )
-
-            await Promise.all(promises)
-
-            logger.log('')
-            logger.success('upload of sourcemaps to bugsnag \n')
-          },
-        })
-      },
-    })
+    addVitePlugin(BugsnagSourceMapUploaderPlugin({
+      apiKey: options.config.apiKey,
+      appVersion: options.config.appVersion,
+      overwrite: true,
+      logger: options.disableLog ? { debug: () => {}, info: () => {}, warn: () => {}, error: () => {} } : undefined,
+      projectRoot: options.projectRoot,
+    }), { server: true })
   },
 })

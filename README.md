@@ -49,25 +49,33 @@ You can pass every bugsnag [options](https://docs.bugsnag.com/platforms/javascri
 
 ### Source Maps
 
-You can upload sourcemaps by adding the option `publishRelease`.
-It's important to set the baseUrl as well, it will allow bugsnag to map your errors to the sourcemap:
+Set `publishRelease` to upload source maps during a production build. The module uses the BugSnag Vite uploader for browser chunks and the BugSnag CLI for final Nitro server bundles.
+
+Set `baseUrl` to the public URL that serves your Nuxt assets and ensure `appVersion` matches the Bugsnag notifier configuration:
 
 ```js
 {
   bugsnag: {
     publishRelease: true,
-    baseUrl: 'http://localhost:3000'
+    baseUrl: 'https://example.com/',
+    config: {
+      apiKey: 'YOUR_API_KEY',
+      appVersion: 'YOUR_VERSION'
+    }
   }
 }
 ```
 
-The output for a medium Nuxt App can get quite big. So we added an option to disable the logs for that case.
+Uploads are enabled only for non-development builds. Existing source maps for the same bundle path and app version are overwritten, so each deploy should use a unique `appVersion`.
+
+Set `disableLog` to suppress uploader output:
+
 ```js
 {
   bugsnag: {
     publishRelease: true,
     disableLog: true,
-    baseUrl: 'http://localhost:3000'
+    baseUrl: 'https://example.com/'
   }
 }
 ```
