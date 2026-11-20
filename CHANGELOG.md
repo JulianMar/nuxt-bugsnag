@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [9.0.2](https://github.com/JulianMar/nuxt-bugsnag/compare/v9.0.1...v9.0.2) (2026-11-20)
+
+### Bug Fixes
+
+* command ([7d5c96e](https://github.com/JulianMar/nuxt-bugsnag/commit/7d5c96e37801ef17966f19eaa895f25b62b362bc))
+* issue with nuxt types. ([75df3a8](https://github.com/JulianMar/nuxt-bugsnag/commit/75df3a823df7d85962c0363a32184db3965a3a44))
+
 ## [9.0.2-beta.0](https://github.com/JulianMar/nuxt-bugsnag/compare/v9.0.1...v9.0.2-beta.0) (2026-11-20)
 
 ### Bug Fixes
