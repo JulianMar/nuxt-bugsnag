@@ -8,6 +8,7 @@ import {
   storedPerformanceOptions,
 } from './state'
 import { defineNuxtPlugin, useRuntimeConfig } from '#imports'
+import type { Plugin } from 'nuxt/app'
 
 export default defineNuxtPlugin((nuxtApp) => {
   const config: RuntimeConfig = useRuntimeConfig()
@@ -30,4 +31,4 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   // Immediate initialization (default behavior)
   startBugsnag(options, nuxtApp)
-})
+}) as Plugin

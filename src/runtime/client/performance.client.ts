@@ -1,6 +1,7 @@
 import type { RuntimeConfig } from '@nuxt/schema'
 import { startPerformance } from './services/performance'
 import { defineNuxtPlugin, useRouter, useRuntimeConfig } from '#imports'
+import type { Plugin } from 'nuxt/app'
 
 export default defineNuxtPlugin(() => {
   const config: RuntimeConfig = useRuntimeConfig()
@@ -15,4 +16,4 @@ export default defineNuxtPlugin(() => {
   // Immediate initialization
   const router = useRouter()
   startPerformance(options.performanceConfig, router)
-})
+}) as Plugin
